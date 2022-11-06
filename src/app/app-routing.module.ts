@@ -16,6 +16,12 @@ const routes: Routes = [
     path: 'books-list',
     component: BooksListComponent
   },
+
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+
   {
     path: 'book-item',
     component: BookItemComponent,

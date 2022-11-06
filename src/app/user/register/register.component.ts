@@ -9,7 +9,14 @@ export class RegisterComponent implements OnInit {
 
   constructor() { }
 
+name='';
+email='';
+password='';
+repeatPassword='';
+
+
   ngOnInit(): void {
+    console.log('name', name)
   }
 
 }

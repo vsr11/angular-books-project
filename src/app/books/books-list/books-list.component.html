@@ -1,14 +1,8 @@
-<div *ngFor="let book of allBooks">
-    <div class="book-item">
-        <div class="img">
-            <img src={{book.img}} alt="" />
-        </div>
-
-        <div class="title">
-            {{book.title}}
-        </div>
-        <div>
-            {{book.description}}
-        </div>
-    </div>
+<div class="books-list">
+    <ng-container *ngIf="allBooks">
+        <ng-container *ngFor="let onebook of allBooks">
+            <app-book-item [book]="onebook"></app-book-item>
+        </ng-container>
+    </ng-container>
+    <ng-container *ngIf="!allBooks">Loading...</ng-container>
 </div>

@@ -5,25 +5,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
-import { BooksService } from './books/books.service';
 import { SharedModule } from './shared/shared.module';
 import { BooksModule } from './books/books.module';
-import { TestComponent } from './test/test.component';
-
-
+import { FormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
-    ],
+       ],
   imports: [
     BrowserModule,
     CoreModule,
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
-    BooksModule
+    BooksModule,
+    UserModule
    ],
   //  providers: [BooksService],
   bootstrap: [AppComponent]

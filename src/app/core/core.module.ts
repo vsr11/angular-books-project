@@ -4,6 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HederComponent } from './heder/heder.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AsideComponent } from './aside/aside.component';
 
 
 
@@ -11,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     FooterComponent,
     HederComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AsideComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
  exports: [
     FooterComponent,
-    HederComponent
+    HederComponent,
+    AsideComponent
  ] 
 })
 export class CoreModule { }
