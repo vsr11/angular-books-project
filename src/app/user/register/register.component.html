@@ -1,5 +1,6 @@
 <div className="login">
-    <form method="POST">
+    <!-- <div [hidden]="reg.name.valid">test</div> -->
+    <form method="POST" #reg="ngForm" (ngSubmit)="onSubmit(reg)">
         <div>
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" name="name" [(ngModel)]="name" />
