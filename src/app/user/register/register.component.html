@@ -1,21 +1,29 @@
 <div className="login">
-    <!-- <div [hidden]="reg.name.valid">test</div> -->
-    <form method="POST" #reg="ngForm" (ngSubmit)="onSubmit(reg)">
+    <div class="err" [hidden]="name.valid||name.untouched">Username required</div>
+    <div class="err" [hidden]="email.valid||email.untouched">Email invalid</div>
+    <div class="err" [hidden]="password.valid||email.untouched">Password min 5</div>
+    <div class="err" [hidden]="repeatPassword.value===password.value||repeatPassword.untouched">repeatPassword</div>
+
+
+
+    <form #regForum="ngForm" (ngSubmit)="register()">
         <div>
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" [(ngModel)]="name" />
+            <input type="text" id="name" name="name" [(ngModel)]="model.name" #name="ngModel" required />
         </div>
         <div>
             <label htmlFor="email">E-mail:</label>
-            <input type="email" id="email" name="email" [(ngModel)]="email" />
+            <input type="email" id="email" name="email" [(ngModel)]="model.email" #email="ngModel" required email />
         </div>
         <div>
             <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" [(ngModel)]="password" />
+            <input type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel"
+                required minlength="5" />
         </div>
         <div>
-            <label htmlFor="repeat-password">Repeat Password:</label>
-            <input type="password" id="repeat-password" name="repeatPassword" [(ngModel)]="repeatPassword" />
+            <label htmlFor="repeatPassword">Repeat Password:</label>
+            <input type="password" id="repeatPassword" name="repeatPassword" [(ngModel)]="model.repeatPassword"
+                #repeatPassword="ngModel" />
         </div>
         <!-- <div className="err">{err}</div> -->
         <div>

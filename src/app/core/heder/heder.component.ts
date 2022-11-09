@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-heder',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heder.component.css']
 })
 export class HederComponent implements OnInit {
-
-  constructor() { }
-
+  isAuth = JSON.parse(this.auth.user!);
+  // user = this.auth.user;
+  constructor(private auth: AuthService) { }
   ngOnInit(): void {
+    console.log(this.isAuth)
   }
 
 }

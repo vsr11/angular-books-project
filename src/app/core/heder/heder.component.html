@@ -3,38 +3,31 @@
         <ul>
 
             <li>
-
-                <div>BOOKS</div>
-
+                <a routerLink='/books-list' routerLinkActive="active">BOOKS</a>
             </li>
 
+            <!-- <div className=" user-items">
+                {{isLoggedIn ? <NavLink to="/mybooks">My books</NavLink> : ""}
+                {{isLoggedIn ? <NavLink to="/myvotelist">My votes</NavLink> : ""}
+                {{isLoggedIn ? <NavLink to="/myreviewlist">My review </NavLink> : ""}
+            </div> -->
 
-            <!-- <div className="user-items">
-                  {auth?.user ? <NavLink to="/mybooks">My books</NavLink> : ""}
-                  {auth?.user ? <NavLink to="/myvotelist">My votes</NavLink> : ""}
-                  {auth?.user ? <NavLink to="/myreviewlist">My review </NavLink> : ""}
-                </div> -->
 
-
-            <!-- <ul>
-                <li>Welcome, {auth?.user?.name}!</li>
+            <ul *ngIf="isAuth">
+                <li>Welcome, {{isAuth.data.user.email}}!</li>
                 <li>
-                   
+
                     <div>Logout</div>
-                  
-                </li>
-            </ul> -->
 
-            <ul>
+                </li>
+            </ul>
+
+            <ul *ngIf="!isAuth">
                 <li>
-                    <!-- <Link to="/login"> -->
-                    <div>Login</div>
-                    <!-- </Link> -->
+                    <a routerLink="/login" routerLinkActive="active">Login</a>
                 </li>
                 <li>
-                    <!-- <Link to="/register"> -->
-                    <div>Register</div>
-                    <!-- </Link> -->
+                    <a routerLink="/register" routerLinkActive="active">Register</a>
                 </li>
             </ul>
 

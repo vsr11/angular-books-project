@@ -1,8 +1,14 @@
-<div class="books-list">
-    <ng-container *ngIf="allBooks">
-        <ng-container *ngFor="let onebook of allBooks">
-            <app-book-item [book]="onebook"></app-book-item>
+<div class="main">
+    <div>
+        <app-aside></app-aside>
+    </div>
+
+    <div class="books-list">
+        <ng-container *ngIf="allBooks">
+            <ng-container *ngFor="let onebook of allBooks">
+                <app-book-item [book]="onebook"></app-book-item>
+            </ng-container>
         </ng-container>
-    </ng-container>
-    <ng-container *ngIf="!allBooks">Loading...</ng-container>
+        <ng-container *ngIf="!allBooks">Loading...</ng-container>
+    </div>
 </div>

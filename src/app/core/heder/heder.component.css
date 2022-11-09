@@ -1,8 +1,11 @@
 #header {
-    width: 80vw;
+
+    width: 95vw;
+    padding: 0 6rem;
     margin: auto;
-    font-size: 2rem;
-    border-bottom: 0.5rem solid;
+    font-size: 1.5rem;
+    border-bottom: 3px solid;
+    font-family: "Taviraj", serif;
 }
 
 
@@ -18,7 +21,15 @@ nav ul li {
     padding: 0 1rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 .fa-solid {
     font-size: 1.3rem;
     padding: 0 0.25rem;
+}
+
+.active {
+    color: red;
 }

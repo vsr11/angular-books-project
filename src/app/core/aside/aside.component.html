@@ -1,3 +1,40 @@
-<div class="aside">
-    <p> aside works!</p>
+<div className="aside">
+    <div className="categories">
+        <h2>CATEGORIES</h2>
+        <div className="item-categories">
+            <ul *ngFor="let cat of catArray">
+                <li>{{cat}}</li>
+                <!-- {categories.map((x, idx) => (
+            <li key={idx}>
+              <NavLink to={`/categories/${x}`}>{x}</NavLink>
+            </li>
+          ))} -->
+
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div className="sort">
+      <h1>Rating</h1>
+      <ul>
+        <li>
+          <Link
+            to="?sort=sortCount"
+            className={isActive1 ? activeClassName : ""}
+          >
+            Most read books
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="?sort=sortAv"
+            className={isActive2 ? activeClassName : ""}
+          >
+            Highest rated books
+          </Link>
+        </li>
+      </ul>
+    </div> -->
 </div>

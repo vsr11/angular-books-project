@@ -5,6 +5,7 @@ import { HederComponent } from './heder/heder.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AsideComponent } from './aside/aside.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { AsideComponent } from './aside/aside.component';
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
  exports: [
     FooterComponent,
