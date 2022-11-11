@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "books-api": {
+    "client": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,14 +17,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/books-api",
+            "outputPath": "dist/client",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+{
+  "glob": "**/*",
+  "input": "./node_modules/@zulkarnainshah/ng-rating-bar/assets",
+  "output": "./assets/ng-rating-bar"
+}
             ],
             "styles": [
               "src/styles.css"
@@ -68,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "books-api:build:production"
+              "browserTarget": "client:build:production"
             },
             "development": {
-              "browserTarget": "books-api:build:development"
+              "browserTarget": "client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "books-api:build"
+            "browserTarget": "client:build"
           }
         },
         "test": {
@@ -101,5 +106,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "client"
 }

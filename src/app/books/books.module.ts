@@ -6,7 +6,8 @@ import { BookItemComponent } from './book-item/book-item.component';
 import { BooksService } from './books.service';
 import { CoreModule } from '../core/core.module';
 import { BookInfoComponent } from './book-info/book-info.component';
-// import { Router, RouterModule } from '@angular/router';
+import { NgRatingBarModule } from '@zulkarnainshah/ng-rating-bar';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     BooksListComponent,
@@ -17,7 +18,8 @@ import { BookInfoComponent } from './book-info/book-info.component';
   imports: [
     CommonModule,
     CoreModule,
-    // RouterModule
+    NgRatingBarModule,
+    RouterModule
   ],
   providers: [BooksService],
   exports:[

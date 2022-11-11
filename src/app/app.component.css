@@ -11,11 +11,11 @@ body {
 
 body {
     margin: 2rem;
-
 }
 
 .container {
     display: flex;
+    flex-wrap: nowrap;
 }
 
 code {

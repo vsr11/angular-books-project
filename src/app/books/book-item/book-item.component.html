@@ -1,17 +1,19 @@
 <div class="book-item">
     <div class="img">
-        <img src={{book.img}} alt="" />
+        <a [routerLink]="['/book-info', book.id]"><img src={{book.img}} alt="" /></a>
     </div>
 
     <div class="title">
-
-        <a [routerLink]="['/book-info/', book?.id]">{{book.title}}</a>
+        <a [routerLink]="['/book-info', book.id]">{{book.title}}</a>
     </div>
 
     <!-- <div class="title">
         {{book.title}}
     </div> -->
     <div class="author">
-        {{book.authors}}
+        <ng-rating-bar [rating]="averageRating" [disabled]="true" size="30px"></ng-rating-bar>
+        <!-- {{book.rating}}
+        rating:{{this.averageRating}}/
+        {{this.ratingCount}} -->
     </div>
 </div>

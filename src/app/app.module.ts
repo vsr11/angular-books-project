@@ -1,3 +1,4 @@
+import { NgRatingBarModule } from '@zulkarnainshah/ng-rating-bar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +24,9 @@ import { AuthService } from './user/auth.service';
     BooksModule,
     UserModule,
     AppRoutingModule,
+NgRatingBarModule,
    ],
+
  
   providers: [AuthService],
   bootstrap: [AppComponent]
