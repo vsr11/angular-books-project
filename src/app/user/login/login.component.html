@@ -1,4 +1,4 @@
-<div className="login">
+<div class="login">
     <form #logForum="ngForm" (ngSubmit)="login()">
         <div>
             <label htmlFor="email">E-mail:</label>
@@ -10,10 +10,18 @@
             <input type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel"
                 required />
         </div>
-        <!-- <div className="err">{err}</div> -->
+
         <div>
-            <input type="submit" value="Login" />
-            <input type="button" value="Exit" />
+            <input type="submit" [disabled]="logForum.form.invalid" value="Login" />
+            <!-- <input type="button" value="Exit" /> -->
+            <button routerLink="/">Exit</button>
         </div>
     </form>
+    <div class="allerr">
+        <div class="err" [hidden]="email.valid||email.untouched">Email is invalid</div>
+        <div class="err" [hidden]="password.valid || password.untouched">
+            Password is required
+        </div>
+        <div class="err" *ngIf="err1">{{err1}}</div>
+    </div>
 </div>

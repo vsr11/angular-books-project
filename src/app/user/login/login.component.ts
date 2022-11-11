@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   model!:any;
-  constructor(private http: HttpClient) { 
+  err1:any;
+  constructor(private http: HttpClient, private router: Router) { 
     this.model={
       email: '',
       password: '',
-      // data: {}
-  }
+       }
   }
 
   ngOnInit(): void {
@@ -24,12 +25,18 @@ export class LoginComponent implements OnInit {
     this.http.post('http://localhost:5000/signin', this.model)
     .subscribe((data: any)=>{
       if(localStorage.getItem('userData')){
-        return;
+        this.router.navigate(['/']);
+        // return;
       } else {
         localStorage.setItem('userData', JSON.stringify({data}));
+        this.router.navigate(['/']);
+        // return;
       }
-      console.log(localStorage.getItem('userData'))
-    })
+      // console.log(localStorage.getItem('userData'))
+    },
+    (e)=>{this.err1=e.error})
   }
 
 }
+// 
+// return;

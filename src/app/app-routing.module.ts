@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookInfoComponent } from './books/book-info/book-info.component';
 import { BookItemComponent } from './books/book-item/book-item.component';
 import { BooksListComponent } from './books/books-list/books-list.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
@@ -17,15 +18,18 @@ const routes: Routes = [
     component: BooksListComponent
   },
 
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-
-  {
+   {
     path: 'book-item',
     component: BookItemComponent,
   },
+  {
+    path: 'book-info/:id',
+    component: BookInfoComponent,
+    // canActivate: [ParamsActivate],
+    // data: {
+    //   paramsActivate: ['id'],
+    //   paramsActivateRedirectUrl: '/user-list'
+    },
     {
     path: 'login',
     component: LoginComponent

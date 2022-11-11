@@ -1,6 +1,8 @@
 
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+// import { NgForm } from '@angular/forms';
 
 import { IUser } from 'src/app/shared/interfaces';
 
@@ -12,8 +14,9 @@ import { IUser } from 'src/app/shared/interfaces';
 })
 export class RegisterComponent  {
 model!:any;
+err1:any;
 
-  constructor() { 
+  constructor(private http: HttpClient,private router: Router) { 
     this.model={
       email: '',
          password: '',
@@ -26,17 +29,12 @@ model!:any;
   }
   }
   register(){
-    console.log(this.model);
-    
-    
+    // console.log(this.model);
+    delete this.model['repeatPassword']
+    this.http.post('http://localhost:5000/users', this.model)
+    .subscribe(
+      ()=>this.router.navigate(['/login']),
+      (e)=>{this.err1=e.error}
+      )
   }
-  
 }
-  // onSubmit(data: NgForm){
-  //   delete data.value.repeatPassword;
-  //   console.log(data)
-  //   this.http.post('http://localhost:5000/users', JSON.stringify(data.value), {headers: new HttpHeaders({'Content-Type': 'application/json'})})
-  //   .subscribe((d)=>{console.log(d)})
-  //   // this.http.post('http://localhost:5000/users', data.value)
-
-  // }

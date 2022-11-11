@@ -1,6 +1,9 @@
 .login {
-    max-width: 50rem;
-    margin: 5rem auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5rem;
+    max-width: 60rem;
+
     font-size: 1.5rem;
 }
 
@@ -10,13 +13,14 @@ div {
 }
 
 form {
-    width: 50rem;
-    margin: auto;
+    min-width: 45rem;
     border: 2px solid #090;
+    padding: 2rem;
 }
 
 form label {
     font-weight: bold;
+    width: 10rem;
 }
 
 input {
@@ -31,22 +35,29 @@ input:focus+.actions {
     border-color: #090;
 }
 
-div:last-of-type input {
+div:last-of-type input,
+button {
 
     font-weight: bold;
     border: 1px solid;
     background-color: aliceblue;
     border-color: rgb(208, 228, 246);
     cursor: pointer;
+    padding: 0.2rem 2rem;
 }
 
-div:last-of-type input:hover {
+div:last-of-type input:hover,
+button:hover {
 
     border: 1px solid;
     background-color: rgb(196, 215, 231);
     border-color: rgb(80, 93, 105);
 }
 
-div.err {
+.allerr {
+    min-width: 20rem;
+}
+
+.err {
     color: red;
 }

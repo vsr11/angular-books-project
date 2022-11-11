@@ -1,11 +1,4 @@
-<div className="login">
-    <div class="err" [hidden]="name.valid||name.untouched">Username required</div>
-    <div class="err" [hidden]="email.valid||email.untouched">Email invalid</div>
-    <div class="err" [hidden]="password.valid||email.untouched">Password min 5</div>
-    <div class="err" [hidden]="repeatPassword.value===password.value||repeatPassword.untouched">repeatPassword</div>
-
-
-
+<div class="login">
     <form #regForum="ngForm" (ngSubmit)="register()">
         <div>
             <label htmlFor="name">Name:</label>
@@ -18,7 +11,7 @@
         <div>
             <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel"
-                required minlength="5" />
+                required minlength="4" maxlength="16" />
         </div>
         <div>
             <label htmlFor="repeatPassword">Repeat Password:</label>
@@ -27,8 +20,21 @@
         </div>
         <!-- <div className="err">{err}</div> -->
         <div>
-            <input type="submit" value="Register" />
-            <input type="button" value="Exit" />
+            <input type="submit" [disabled]="regForum.form.invalid" value="Register" />
+            <button routerLink="/">Exit</button>
         </div>
+        <p>Have an account ? <a routerLink="/login">Click here</a></p>
     </form>
+
+    <div class="allerr">
+        <div class="err" [hidden]="name.valid||name.untouched">Username is required</div>
+        <div class="err" [hidden]="email.valid||email.untouched">Email is invalid</div>
+        <div class="err" [hidden]="password.valid||password.untouched">Password must be between 4 and 16 symbols</div>
+        <div class="err" [hidden]="repeatPassword.value===password.value||repeatPassword.untouched">Both passwords must
+            match</div>
+
+        <div class="err" *ngIf="err1">{{err1}}</div>
+
+
+    </div>
 </div>

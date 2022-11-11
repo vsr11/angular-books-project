@@ -4,7 +4,8 @@
     </div>
 
     <div class="title">
-        {{book.title}}
+
+        <a [routerLink]="['/book-info/', book?.id]">{{book.title}}</a>
     </div>
 
     <!-- <div class="title">

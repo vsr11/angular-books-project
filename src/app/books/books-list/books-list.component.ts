@@ -19,7 +19,7 @@ export class BooksListComponent implements OnInit {
   ngOnInit(): void {
     this.bookSer.getAllBooks().subscribe((data)=>{
       this.allBooks = data; 
-      console.log(this.allBooks);
+      // console.log(this.allBooks);
          
     })
     

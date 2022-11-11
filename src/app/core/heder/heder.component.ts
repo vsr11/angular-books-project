@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/src/app/shared/services/auth.service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../user/auth.service';
 
 @Component({
   selector: 'app-heder',
   templateUrl: './heder.component.html',
   styleUrls: ['./heder.component.css']
 })
-export class HederComponent implements OnInit {
-  isAuth = JSON.parse(this.auth.user!);
-  // user = this.auth.user;
-  constructor(private auth: AuthService) { }
-  ngOnInit(): void {
-    console.log(this.isAuth)
+export class HederComponent {
+  constructor(private auth: AuthService,private router:Router) { }
+  isAuth(){return JSON.parse(this.auth.user()!);}
+  logout(){
+    localStorage.removeItem('userData');
+    this.router.navigate(['/']);
   }
-
+  
+  
+  
 }

@@ -13,16 +13,14 @@
             </div> -->
 
 
-            <ul *ngIf="isAuth">
-                <li>Welcome, {{isAuth.data.user.email}}!</li>
+            <ul *ngIf="isAuth()">
+                <li>Welcome, {{isAuth().data.user.email}}!</li>
                 <li>
-
-                    <div>Logout</div>
-
+                    <a routerLink="/" (click)="logout()">Logout</a>
                 </li>
             </ul>
 
-            <ul *ngIf="!isAuth">
+            <ul *ngIf="!isAuth()">
                 <li>
                     <a routerLink="/login" routerLinkActive="active">Login</a>
                 </li>

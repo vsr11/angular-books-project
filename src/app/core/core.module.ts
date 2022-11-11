@@ -24,7 +24,8 @@ import { AppRoutingModule } from '../app-routing.module';
  exports: [
     FooterComponent,
     HederComponent,
-    AsideComponent
+    AsideComponent,
+    AppRoutingModule
  ] 
 })
 export class CoreModule { }
