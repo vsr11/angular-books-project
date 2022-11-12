@@ -1,18 +1,14 @@
+<!-- {{this.catArr?.length}} -->
 <div className="aside">
   <div className="categories">
     <h2>CATEGORIES</h2>
+
     <div className="item-categories">
-      <ul *ngFor="let cat of catArray">
+
+      <ul *ngFor="let cat of allCategoris">
         <li><a routerLinkActive="active" routerLink="/books-list" [queryParams]="{ category: cat }"
             queryParamsHandling="merge">{{cat}}</a>
         </li>
-        <!-- {categories.map((x, idx) => (
-            <li key={idx}>
-              <NavLink to={`/categories/${x}`}>{x}</NavLink>
-            </li>
-          ))} -->
-
-
       </ul>
     </div>
   </div>
@@ -39,4 +35,3 @@
         </li>
       </ul>
     </div> -->
-</div>
