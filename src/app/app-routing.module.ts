@@ -18,30 +18,26 @@ const routes: Routes = [
     component: BooksListComponent
   },
 
-   {
+    {
     path: 'book-item',
     component: BookItemComponent,
-  },
-  {
+    },
+    {
     path: 'book-info/:id',
     component: BookInfoComponent,
-    // canActivate: [ParamsActivate],
-    // data: {
-    //   paramsActivate: ['id'],
-    //   paramsActivateRedirectUrl: '/user-list'
     },
     {
     path: 'login',
     component: LoginComponent
-  },
-  {
+    },
+    {
     path: 'register',
     component: RegisterComponent
-  },
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
+     },
+    {
+     path: '**',
+     component: NotFoundComponent
+     }
 ];
 
 @NgModule({

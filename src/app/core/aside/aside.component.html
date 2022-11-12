@@ -1,21 +1,23 @@
 <div className="aside">
-    <div className="categories">
-        <h2>CATEGORIES</h2>
-        <div className="item-categories">
-            <ul *ngFor="let cat of catArray">
-                <li>{{cat}}</li>
-                <!-- {categories.map((x, idx) => (
+  <div className="categories">
+    <h2>CATEGORIES</h2>
+    <div className="item-categories">
+      <ul *ngFor="let cat of catArray">
+        <li><a routerLinkActive="active" routerLink="/books-list" [queryParams]="{ category: cat }"
+            queryParamsHandling="merge">{{cat}}</a>
+        </li>
+        <!-- {categories.map((x, idx) => (
             <li key={idx}>
               <NavLink to={`/categories/${x}`}>{x}</NavLink>
             </li>
           ))} -->
 
 
-            </ul>
-        </div>
+      </ul>
     </div>
+  </div>
 
-    <!-- <div className="sort">
+  <!-- <div className="sort">
       <h1>Rating</h1>
       <ul>
         <li>
