@@ -2,26 +2,28 @@
     <form #logForum="ngForm" (ngSubmit)="login()">
         <div>
             <label htmlFor="email">E-mail:</label>
-            <input type="email" id="email" name="email" autoFocus [(ngModel)]="model.email" #email="ngModel" required
-                email />
+            <input type="email" id="email" name="email" [(ngModel)]="model.email" #email="ngModel" required email />
+            <div class="err" [hidden]="email.valid||email.untouched">Email is invalid</div>
         </div>
         <div>
             <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel"
                 required />
+            <div class="err" [hidden]="password.valid || password.untouched">
+                Password is required
+            </div>
         </div>
 
         <div>
             <input type="submit" [disabled]="logForum.form.invalid" value="Login" />
             <!-- <input type="button" value="Exit" /> -->
             <button routerLink="/">Exit</button>
+            <div class="err" *ngIf="err1">{{err1}}</div>
         </div>
     </form>
     <div class="allerr">
-        <div class="err" [hidden]="email.valid||email.untouched">Email is invalid</div>
-        <div class="err" [hidden]="password.valid || password.untouched">
-            Password is required
-        </div>
-        <div class="err" *ngIf="err1">{{err1}}</div>
+
+
+        <!-- <div class="err" *ngIf="err1">{{err1}}</div> -->
     </div>
 </div>

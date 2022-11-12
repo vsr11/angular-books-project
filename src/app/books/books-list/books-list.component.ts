@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import {IBook} from '../../shared/interfaces'
@@ -18,8 +17,10 @@ export class BooksListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.router.queryParams.subscribe(qp=>
-      this.bookSer.getAllBooks(qp).subscribe((data)=>{
+    this.router.queryParams.subscribe((qp) => 
+      this.bookSer
+      .getAllBooks(qp['category'], qp['sort'])
+      .subscribe((data) => {
         this.allBooks = data; 
       }
       )
