@@ -14,10 +14,13 @@ import { NgRatingBarModule } from '@zulkarnainshah/ng-rating-bar';
 
 import { AppComponent } from './app.component';
 import { AuthService } from './user/auth.service';
+import { AddBookComponent } from './books/add-book/add-book.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AddBookComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { AuthService } from './user/auth.service';
     UserModule,
     AppRoutingModule,
     NgRatingBarModule,
+    ReactiveFormsModule
    ],
 
  

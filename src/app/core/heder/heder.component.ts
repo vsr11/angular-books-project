@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../../user/auth.service';
+import { AuthService } from 'src/app/user/auth.service';
 
 @Component({
   selector: 'app-heder',
@@ -8,13 +7,7 @@ import { AuthService } from '../../user/auth.service';
   styleUrls: ['./heder.component.css']
 })
 export class HederComponent {
-  constructor(private auth: AuthService,private router:Router) { }
-  isAuth(){return JSON.parse(this.auth.user()!);}
-  logout(){
-    localStorage.removeItem('userData');
-    this.router.navigate(['/']);
-  }
-  
-  
-  
+  constructor(private authService: AuthService){}
+  isAuth = this.authService.isAuth;
+  logout = this.authService.logout;
 }

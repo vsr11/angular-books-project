@@ -4,6 +4,7 @@ import { BookInfoComponent } from './books/book-info/book-info.component';
 import { BookItemComponent } from './books/book-item/book-item.component';
 import { BooksListComponent } from './books/books-list/books-list.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { AddBookComponent } from './books/add-book/add-book.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'books-list',
     component: BooksListComponent
+  },
+
+  {
+    path: 'add-book',
+    component: AddBookComponent
   },
 
     {

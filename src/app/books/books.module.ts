@@ -19,7 +19,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     CoreModule,
     NgRatingBarModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [BooksService],
   exports:[
