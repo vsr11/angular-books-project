@@ -11,9 +11,28 @@
         </li>
       </ul>
     </div>
+
+    <div className="sort">
+      <h2>RATING</h2>
+      <ul>
+        <li>
+          <a routerLinkActive="active" routerLink="/books-list" [queryParams]="{ sort:'most-rated' }"
+            queryParamsHandling="merge">Most read books</a>
+        </li>
+
+        <li>
+          <a routerLinkActive="active" routerLink="/books-list" [queryParams]="{ sort:'highest-rated' }"
+            queryParamsHandling="merge">Highest rated books</a>
+        </li>
+      </ul>
+    </div>
   </div>
 
-  <!-- <div className="sort">
+
+</div>
+
+
+<!-- <div className="sort">
       <h1>Rating</h1>
       <ul>
         <li>

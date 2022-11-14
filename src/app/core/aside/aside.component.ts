@@ -8,20 +8,11 @@ import { catArr } from "../../shared/categories";
 })
 export class AsideComponent implements OnInit {
   
-//  catArray:string[]=[
-//   "history",
-//   "thriller",
-//   "romance",
-//   "horror",
-//   "fantasy",
-//   "crime",
-//   "young adult",
-// ];
   constructor() { }
   allCategoris: string[]=catArr; 
 
   ngOnInit(): void {
-    console.log(this.allCategoris);
+    // console.log(this.allCategoris);
     
   }
 

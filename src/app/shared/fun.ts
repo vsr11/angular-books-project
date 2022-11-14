@@ -1,14 +1,10 @@
-import { Injectable } from "@angular/core";
-import { NgModel } from "@angular/forms";
+import { IBook } from "./interfaces";
 
-@Injectable({providedIn: 'root'})
-export class Fun {
-
-  
+export const Fun ={  
 
 ratingCount(arr:number[]) :number{
     return arr[0] + arr[1] + arr[2] + arr[3] + arr[4];
-  }
+  },
   
  averageRating(arr:number[]):number{
     if (this.ratingCount(arr) === 0) {
@@ -19,5 +15,26 @@ ratingCount(arr:number[]) :number{
         this.ratingCount(arr)
       );
     }
-  }
+  },
+
+  sortBy(data: IBook[], sort: string): IBook[]{
+    if (sort === "most-rated") {
+      data.sort((item1, item2) => {
+        return (
+          this.ratingCount(item2.rating) -
+          this.ratingCount(item1.rating)
+        );
+      });
+    }
+  
+    if (sort === "highest-rated") {
+      data.sort((item1, item2) => {
+        return (
+          this.averageRating(item2.rating) -
+          this.averageRating(item1.rating)
+        );
+      });
+    }
+    return data;
+},
 }

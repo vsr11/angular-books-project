@@ -4,6 +4,7 @@
     </div>
 
     <div class="books-list">
+        <div class="title">{{cat}}</div>
         <ng-container *ngIf="allBooks">
             <ng-container *ngFor="let onebook of allBooks">
                 <app-book-item [book]="onebook"></app-book-item>

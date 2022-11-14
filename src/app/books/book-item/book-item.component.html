@@ -7,13 +7,7 @@
         <a [routerLink]="['/book-info', book.id]">{{book.title}}</a>
     </div>
 
-    <!-- <div class="title">
-        {{book.title}}
-    </div> -->
-    <div class="author">
-        <ng-rating-bar [rating]="averageRating" [disabled]="true" size="30px"></ng-rating-bar>
-        <!-- {{book.rating}}
-        rating:{{this.averageRating}}/
-        {{this.ratingCount}} -->
+    <div>
+        <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
     </div>
 </div>

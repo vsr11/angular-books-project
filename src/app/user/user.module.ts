@@ -19,7 +19,8 @@ import { RouterModule } from '@angular/router';
 
   ],
   exports: [
-    
+    LoginComponent,
+    RegisterComponent
   ]
 })
 export class UserModule { }

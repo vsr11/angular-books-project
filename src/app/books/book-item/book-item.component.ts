@@ -1,33 +1,22 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute as Router } from '@angular/router';
 import { IBook } from 'src/app/shared/interfaces';
-
+import { Fun } from "../../shared/fun"
 
 @Component({
   selector: 'app-book-item',
   templateUrl: './book-item.component.html',
   styleUrls: ['./book-item.component.css']
 })
-export class BookItemComponent  {
-  constructor(){}
+export class BookItemComponent implements OnInit {
+  constructor(private router: Router){}
   @Input() book!: IBook;
+  r1=0;
+  r2=0;
 
-  get ratingCount() :number {
-    return this.book.rating[0]
-    +this.book.rating[1]
-    +this.book.rating[2]
-    +this.book.rating[3]
-    +this.book.rating[4];
-  }
+  ngOnInit(): void {  
+    this.r1 = Fun.ratingCount(this.book.rating);
+    this.r2 = Fun.averageRating(this.book.rating)
 
-  get averageRating():number{
-    if (this.ratingCount === 0) {
-      return 0;
-    } else {
-      return (
-        (this.book.rating[0] * 5 + this.book.rating[1] * 4 
-          + this.book.rating[2] * 3 + this.book.rating[3] * 2 + this.book.rating[4]) /
-        this.ratingCount
-      );
-    }
   }
 }

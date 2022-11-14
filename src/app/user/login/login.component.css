@@ -3,7 +3,6 @@
     justify-content: space-evenly;
     margin: 5rem;
     max-width: 60rem;
-
     font-size: 1.5rem;
 }
 
@@ -12,10 +11,16 @@ div {
     min-height: 3rem;
 }
 
+div.input {
+    position: relative;
+}
+
 form {
     min-width: 30rem;
     border: 2px solid #090;
     padding: 2rem;
+    position: relative;
+
 }
 
 form label {
@@ -55,8 +60,8 @@ button:hover {
 }
 
 .err {
-    position: relative;
-    bottom: 64px;
+    position: absolute;
+    top: 0px;
     left: 600px;
 
     min-width: 100px;
@@ -74,6 +79,24 @@ button:hover {
     min-width: 20rem;
 } */
 
-/* .err {
+.err1,
+.err {
     color: red;
-} */
+}
+
+.err2 {
+
+    position: absolute;
+    bottom: 0px;
+    right: -350px;
+
+    min-width: 100px;
+    /* display: block; */
+    /* z-index: 11111; */
+    text-align: center;
+    border-radius: 20px;
+    /* color: rgb(255, 255, 255); */
+    height: auto;
+    width: 320px;
+    box-shadow: 0 5px 10px black;
+}

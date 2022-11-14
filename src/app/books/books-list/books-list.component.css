@@ -12,3 +12,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 2rem;
+}
