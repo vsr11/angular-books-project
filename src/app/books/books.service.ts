@@ -34,31 +34,15 @@ addBook(book: IBook|undefined){
 
 updateBook(bookId: string, data: IBook){
   this.http.patch<IBook>('http://localhost:5000/books/' + bookId, data) 
-  .subscribe(()=>this.router.navigate(['/']));
-  // {
-  //   title: document.forms[0].title.value,
-  //   description: document.forms[0].text.value,
-  //   categories: categories,
-  //   img: document.forms[0].img.value,
-  // }
-}
+  .subscribe(()=>this.router.navigate(['/']),
+  (e)=>{this.err1=e.error}
+  );
+ }
 
-  // extactBookData(bookObj: any, extraDataToAdd:any = {}){
-  //   const newData = bookObj?.items?.[0];
-  //   const onebook = {
-  //     id: newData?.id,
-  //     title: newData?.volumeInfo?.title,
-  //     authors: newData?.volumeInfo?.authors,
-  //     publisher: newData?.volumeInfo?.publisher,
-  //     publishedDate: newData?.volumeInfo?.publishedDate,
-  //     pageCount: newData?.volumeInfo?.pageCount,
-  //     img: newData?.volumeInfo?.imageLinks?.thumbnail || "",
-  //     rating: [0, 0, 0, 0, 0],
-  //     description: newData?.volumeInfo?.description,
-  //     language: newData?.volumeInfo?.language,
-  //     ...extraDataToAdd,
-  //   };
-  //   return onebook;
-  // }
-
+ del(bookId: string){
+  this.http.delete('http://localhost:5000/books/' + bookId)
+  .subscribe(()=>this.router.navigate(['/']),
+  (e)=>{this.err1=e.error}
+  );
+ }
 }

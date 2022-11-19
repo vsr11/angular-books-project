@@ -3,16 +3,16 @@
         <h2>{{onebook?.title}}</h2>
         <img src={{onebook?.img}} alt="" />
         <div>
-            <label htmlFor="img">Image:</label>
+            <label for="img">Image:</label>
             <input type="text" name="img" [(ngModel)]="model.img" #img="ngModel" required />
         </div>
         <h4>CATEGORIES</h4>
-        <div class="categories" *ngFor="let x of categories">
-            <div class="categories-item">
-                <label>{{x}}</label>
-                <input [(ngModel)]="model.checked.x" type="checkbox" name={{x}} value={{x}} />
-            </div>
-        </div>
+        <!-- <div class="categories" *ngFor="let x of categories"> -->
+        <ul>
+            <li *ngFor="let item of list">
+                <input type="checkbox" [(ngModel)]="item.checked" [ngModelOptions]="{standalone: true}">{{item.title}}
+            </li>
+        </ul>
 
         <div class="description">
             <label for="text">
@@ -25,7 +25,8 @@
 
         <div>
             <input type="submit" value="Edit book" />
-            <input type="button" value="Exit" />
+            <input type="button" value="Delete book" (click)="del(onebook!.id)">
+            <input type="button" (click)="exitBtn()" value="Exit" />
         </div>
-    </form> -->
+    </form>
 </div>

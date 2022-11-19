@@ -26,10 +26,10 @@ export class AddBookComponent implements OnInit {
   }
     
   categories = catArr;
-  selectedCats:any[] = [];
   onebook: IBook | undefined;
   findbook: IBook | undefined;
   flag: boolean | undefined;
+  selectedCats:any[] = [];
   cats: FormGroup = new FormGroup({});
 
   externalSearch = new FormGroup({
