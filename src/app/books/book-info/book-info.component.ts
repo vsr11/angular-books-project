@@ -11,7 +11,7 @@ import { BooksService } from '../books.service';
 })
 export class BookInfoComponent implements OnInit {
   book: IBook | undefined;
-  id: any;
+  id: string|undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,

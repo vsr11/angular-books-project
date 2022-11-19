@@ -1,0 +1,15 @@
+<div className="addbook">
+    <form className="find-form" #findForm="ngForm" (ngSubmit)="findbook()">
+        <fieldset>
+            <legend>SEARCH BOOK IN GOOGLE BOOKS</legend>
+            <label htmlFor="isbn">Enter isbn:</label>
+            <input required id="isbn" type="text" name="isbn" [(ngModel)]="model.isbn" #isbn="ngModel" required />
+            <input type="submit" value="Find book" />
+        </fieldset>
+    </form>
+
+    <h1 *ngIf="isbn.touched && (!onebook?.id || isbn.invalid) " class="err">ISBN
+        not found</h1>
+
+
+</div>

@@ -3,13 +3,15 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-  constructor(private auth: AuthService,private router:Router) { }
+  constructor(private router:Router) { }
   
-  user(){
+  get user() {
     return localStorage.getItem('userData');
   }
   
-  get isAuth(){return JSON.parse(this.auth.user()!);}
+  get isAuth() {
+    return JSON.parse(this.user!);
+  }
   
   logout(){
     localStorage.removeItem('userData');

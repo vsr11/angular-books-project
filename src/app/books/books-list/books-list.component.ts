@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Fun } from 'src/app/shared/fun';
 import {IBook} from '../../shared/interfaces'
 import { BooksService } from '../books.service';
@@ -13,9 +13,17 @@ import { BooksService } from '../books.service';
 export class BooksListComponent implements OnInit {
   allBooks: IBook[] | undefined; 
 
-  cat:string="";
-  constructor(private bookSer: BooksService, private router: ActivatedRoute) { }
+  cat: string = "";
+  page: number = 1;
 
+  constructor(private bookSer: BooksService, private router: ActivatedRoute) { }
+pageChanged(page: number){
+  this.page = page;
+}
+
+pageBoundsCorrection(page: number){
+  this.page = page;
+}
 
 
   ngOnInit(): void {

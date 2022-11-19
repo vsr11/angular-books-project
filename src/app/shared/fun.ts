@@ -1,6 +1,6 @@
 import { IBook } from "./interfaces";
 
-export const Fun ={  
+export const Fun = {  
 
 ratingCount(arr:number[]) :number{
     return arr[0] + arr[1] + arr[2] + arr[3] + arr[4];
@@ -36,5 +36,24 @@ ratingCount(arr:number[]) :number{
       });
     }
     return data;
+},
+
+extactBookData(bookObj: any, extraDataToAdd = {}): IBook{
+  const newData = bookObj?.items?.[0];
+  const onebook = {
+    id: newData?.id,
+    title: newData?.volumeInfo?.title,
+    authors: newData?.volumeInfo?.authors,
+    publisher: newData?.volumeInfo?.publisher,
+    publishedDate: newData?.volumeInfo?.publishedDate,
+    pageCount: newData?.volumeInfo?.pageCount,
+    img: newData?.volumeInfo?.imageLinks?.thumbnail || "",
+    rating: [0, 0, 0, 0, 0],
+    description: newData?.volumeInfo?.description,
+    language: newData?.volumeInfo?.language,
+    categories: [],
+    ...extraDataToAdd,
+  };
+  return onebook;
 },
 }

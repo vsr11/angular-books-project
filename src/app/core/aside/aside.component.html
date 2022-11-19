@@ -6,7 +6,7 @@
     <div className="item-categories">
 
       <ul *ngFor="let cat of allCategoris">
-        <li><a routerLinkActive="active" routerLink="/books-list" [queryParams]="{ category: cat }"
+        <li><a routerLinkActive="active" routerLink="/books/books-list" [queryParams]="{ category: cat }"
             queryParamsHandling="merge">{{cat}}</a>
         </li>
       </ul>
@@ -16,12 +16,12 @@
       <h2>RATING</h2>
       <ul>
         <li>
-          <a routerLinkActive="active" routerLink="/books-list" [queryParams]="{ sort:'most-rated' }"
+          <a routerLinkActive="active" routerLink="/books/books-list" [queryParams]="{ sort:'most-rated' }"
             queryParamsHandling="merge">Most read books</a>
         </li>
 
         <li>
-          <a routerLinkActive="active" routerLink="/books-list" [queryParams]="{ sort:'highest-rated' }"
+          <a routerLinkActive="active" routerLink="/books/books-list" [queryParams]="{ sort:'highest-rated' }"
             queryParamsHandling="merge">Highest rated books</a>
         </li>
       </ul>
