@@ -56,4 +56,5 @@ extactBookData(bookObj: any, extraDataToAdd = {}): IBook{
   };
   return onebook;
 },
+
 }

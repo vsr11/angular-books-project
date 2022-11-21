@@ -9,5 +9,6 @@ export interface IBook {
   rating: number[],
   description: string,
   language: string,
-  categories: string[]
+  categories: string[],
+  isbn?: string
 }

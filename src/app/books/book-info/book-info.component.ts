@@ -11,6 +11,7 @@ import { BooksService } from '../books.service';
 })
 export class BookInfoComponent implements OnInit {
   book: IBook | undefined;
+  book1: IBook | undefined;
   id: string|undefined;
 
   constructor(

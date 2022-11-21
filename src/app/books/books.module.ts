@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddComponent } from './add/add.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { UserRatingComponent } from './user-rating/user-rating.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EditBookComponent } from './edit-book/edit-book.component';
     BookInfoComponent,
     AddComponent,
     EditBookComponent,
+    UserRatingComponent,
     
   ],
   imports: [

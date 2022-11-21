@@ -7,10 +7,9 @@
             <input type="text" name="img" [(ngModel)]="model.img" #img="ngModel" required />
         </div>
         <h4>CATEGORIES</h4>
-        <!-- <div class="categories" *ngFor="let x of categories"> -->
-        <ul>
+        <ul class="categories">
             <li *ngFor="let item of list">
-                <input type="checkbox" [(ngModel)]="item.checked" [ngModelOptions]="{standalone: true}">{{item.title}}
+                <input type="checkbox" [(ngModel)]="item.checked" [ngModelOptions]="{standalone: true}">{{item.title }}
             </li>
         </ul>
 

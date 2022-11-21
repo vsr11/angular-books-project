@@ -1,0 +1,18 @@
+<div class="user-rating">
+    <div class="user-rating-left">
+        {{r2}}/5
+        <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
+    </div>
+    <div class="user-rating-right">
+        <ng-container *ngFor="let x of arr">
+            <div class="right-row">
+                <div>
+                    {{x}} <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="bar-container">
+                    <div *ngIf="r1" class="bar" [style.width]="book1.rating[5-x]*100/r1+'%'"></div>
+                </div>
+                <div>{{book1.rating[5-x]}}</div>
+            </div>
+        </ng-container>
+    </div>

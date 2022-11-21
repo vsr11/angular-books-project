@@ -1,4 +1,4 @@
-<div className="addbook">
+<div class="addbook">
     <form className="find-form" #findForm="ngForm" (ngSubmit)="findbook()">
         <fieldset>
             <legend>SEARCH BOOK IN GOOGLE BOOKS</legend>
@@ -10,6 +10,29 @@
 
     <h1 *ngIf="isbn.touched && (!onebook?.id || isbn.invalid) " class="err">ISBN
         not found</h1>
+    {{!!onebook?.id}}
+    {{sb}}
 
+    <!-- {{sb()}} -->
+    <!-- <h1 *ngIf="onebook && sb">Book already in database!</h1> -->
 
+    <!-- <div *ngIf="!sb && onebook?.id">
+        <h1>{{onebook?.title}}</h1>
+        <form class="add-form" #addForm="ngForm" (ngSubmit)="savebook()">
+            <h4>CATEGORIES</h4>
+            <ul class="categories">
+                <li *ngFor="let item of list">
+                    <input type="checkbox" [(ngModel)]="item.checked"
+                        [ngModelOptions]="{standalone: true}">{{item.title}}
+                </li>
+            </ul>
+            <input type="submit" value="Add book" />
+        </form>
+        <button type="button">
+            <a href="">Find another book</a>
+
+        </button>
+        <input type="button" (click)="exitBtn()" value="Exit" />
+
+    </div> -->
 </div>

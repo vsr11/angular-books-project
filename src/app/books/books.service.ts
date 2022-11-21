@@ -3,6 +3,7 @@ import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable()
 export class BooksService {
@@ -25,16 +26,17 @@ getOneBook(id: string){
   }
 
 addBook(book: IBook|undefined){
-  this.http.post<IBook>('http://localhost:5000/books/', book).subscribe(()=>{
-    this.router.navigate(['/books-list'])
-  },
-  (e)=>{this.err1=e.error}
-  );
+  return this.http.post<IBook>('http://localhost:5000/books/', book)
+  // .subscribe(()=>{
+  //   this.router.navigate(['/'])
+  // },
+  // (e)=>{this.err1=e.error}
+  // );
 }
 
 updateBook(bookId: string, data: IBook){
   this.http.patch<IBook>('http://localhost:5000/books/' + bookId, data) 
-  .subscribe(()=>this.router.navigate(['/']),
+  .subscribe(()=>this.router.navigate(['/books', 'book-info', bookId]),
   (e)=>{this.err1=e.error}
   );
  }

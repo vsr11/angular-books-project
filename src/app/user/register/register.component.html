@@ -16,7 +16,7 @@
         <div>
             <label htmlFor="repeatPassword">Repeat Password:</label>
             <input type="password" id="repeatPassword" name="repeatPassword" [(ngModel)]="model.repeatPassword"
-                #repeatPassword="ngModel" />
+                #repeatPassword="ngModel" required />
         </div>
         <!-- <div className="err">{err}</div> -->
         <div>
@@ -30,7 +30,9 @@
         <div class="err" [hidden]="name.valid||name.untouched">Username is required</div>
         <div class="err" [hidden]="email.valid||email.untouched">Email is invalid</div>
         <div class="err" [hidden]="password.valid||password.untouched">Password must be between 4 and 16 symbols</div>
-        <div class="err" [hidden]="repeatPassword.value===password.value||repeatPassword.untouched">Both passwords must
+        <div class="err" [hidden]="repeatPassword.value===password.value
+        ||repeatPassword.untouched
+        ||repeatPassword.valid">Both passwords must
             match</div>
 
         <div class="err" *ngIf="err1">{{err1}}</div>

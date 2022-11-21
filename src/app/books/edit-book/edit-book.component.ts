@@ -35,37 +35,39 @@ export class EditBookComponent implements OnInit {
   title: string = '';
   checked: boolean = false;
   checks: any = [];
-  r: any | undefined;
+  filterList: any | undefined;
 
   id = this.route.snapshot.params['id'];
 
   ngOnInit() {
-    
     this.bookService.getOneBook(this.id).subscribe((d) => {
       this.onebook = d;
       this.model.img = this.onebook.img;
       this.model.description = this.onebook.description;
 
-      catArr.map((x) => this.list.push({ title: x, checked: false }));
+      catArr.map((x) => this.list.push({
+         title: x, 
+         checked: this.onebook?.categories.includes(x) })
+         );
          });
   }
 
   edit() {
-    this.r = this.list.filter((item: { checked: any }) => item.checked);
-    this.r.map((x: any) => {
+    this.filterList = this.list.filter((item: { checked: any }) => item.checked);
+    this.filterList.map((x: any) => {
       if (!this.checks.includes(x.title)) {
         this.checks.push(x.title);
       } 
-      else {
-        // this.checks.filter((y:any) => {return y != x.title});
-        let i = this.checks.indexOf(x.title);
-        if(i > -1){
-          this.checks = this.checks.splice(i, 1);
-        }
-      }
+      // else {
+      //   // this.checks.filter((y:any) => {return y != x.title});
+      //   let i = this.checks.indexOf(x.title);
+      //   if(i > -1){
+      //     this.checks = this.checks.splice(i, 1);
+      //   }
+      // }
     });
-    console.log(this.checks);
-    // this.bookService.updateBook(this.id, this.model)
+    this.model.categories = this.checks;
+    this.bookService.updateBook(this.id, this.model)
   }
 
   del(bookId: string){    

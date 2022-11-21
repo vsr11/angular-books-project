@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -19,8 +18,8 @@ err1:any;
   constructor(private http: HttpClient,private router: Router) { 
     this.model={
       email: '',
-         password: '',
-         repeatPassword:'',
+      password: '',
+      repeatPassword:'',
       name: '',
       booksRead: [],
       role: '',
@@ -29,7 +28,10 @@ err1:any;
   }
   }
   register(){
-    // console.log(this.model);
+    if(this.model.password !== this.model.repeatPassword){
+      this.err1 = 'Both passwords must match';
+      return;
+    }
     delete this.model['repeatPassword']
     this.http.post('http://localhost:5000/users', this.model)
     .subscribe(
