@@ -4,6 +4,8 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { BooksRoutingModule } from './books/books-routing.molule';
+import { isLoggedInGuard } from './shared/guards/is-logged-in.guard';
+import { isAdminGuard } from './shared/guards/is-admin.guard';
 
 const routes: Routes = [
   {
@@ -15,14 +17,16 @@ const routes: Routes = [
     loadChildren:()=>BooksRoutingModule
     // loadChildren: "app/components/books/books.module#BooksModule"
   },
-      {
+  {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    // canActivate:[isLoggedInGuard]
     },
     {
     path: 'register',
-    component: RegisterComponent
-     },
+    component: RegisterComponent,
+    // canActivate:[isLoggedInGuard]
+         },
     {
      path: '**',
      component: NotFoundComponent

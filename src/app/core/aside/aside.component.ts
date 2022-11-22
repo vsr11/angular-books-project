@@ -12,7 +12,6 @@ export class AsideComponent implements OnInit {
   allCategoris: string[]=catArr; 
 
   ngOnInit(): void {
-    // console.log(this.allCategoris);
     
   }
 

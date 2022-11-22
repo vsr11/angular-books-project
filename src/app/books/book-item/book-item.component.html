@@ -1,13 +1,31 @@
 <div class="book-item">
-    <div class="img">
-        <a [routerLink]="['/books/book-info', book.id]"><img src={{book.img}} alt="" /></a>
-    </div>
+  <div class="img">
+    <a [routerLink]="['/books/book-info', book.id]"><img src={{book.img}} alt="" /></a>
+  </div>
 
-    <div class="title">
-        <a [routerLink]="['/books/book-info', book.id]">{{book.title}}</a>
-    </div>
+  <div class="title">
+    <a [routerLink]="['/books/book-info', book.id]">{{book.title}}</a>
+  </div>
 
-    <div>
-        <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
-    </div>
+  <div>
+    <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
+  </div>
+
+  <div *ngIf="isAuth">
+    <span *ngIf="readBook" class="button">Read</span>
+    <button type="button" *ngIf="!readBook" (click)="onReadHendler()">
+      Read
+    </button>
+  </div>
+  <!-- {auth?.isLoggedIn ? (
+        auth.user.booksRead.includes(props.id) ? (
+          <span className="button">Read</span>
+        ) : (
+          <button type="button" onClick={onReadHendler}>
+            Read
+          </button>
+        )
+      ) : (
+        ""
+      )} -->
 </div>

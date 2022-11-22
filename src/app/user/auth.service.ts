@@ -17,4 +17,14 @@ export class AuthService {
     localStorage.removeItem('userData');
     this.router.navigate(['/']);
   }
+
+  get isAdmin(){
+    let x:any = localStorage.getItem('userData');
+    x = JSON.parse(x);
+    return x.data.user.role === 'admin';
   }
+
+get getReadList(){
+  return this.isAuth.data.user.booksRead;
+}
+}

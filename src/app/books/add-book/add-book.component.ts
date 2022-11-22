@@ -63,11 +63,9 @@ FindBookDB (){
       }
     }
 
-    // console.log(this.selectedCats);
     
     // e.preventDefault();
     // let categories = [];
-    // console.log(this.categoriesForm.get('categories')?.value);
     // for (let x of e.currentTarget.parentNode) {
       // if (x.type === "checkbox" && x.checked) {
         // categories.push(x.value);

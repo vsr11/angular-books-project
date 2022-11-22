@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AddComponent } from './add/add.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { UserRatingComponent } from './user-rating/user-rating.component';
+import { UserService } from '../user/user.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { UserRatingComponent } from './user-rating/user-rating.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [BooksService],
+  providers: [BooksService, UserService],
   exports:[
     BooksListComponent,
   

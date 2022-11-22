@@ -17,7 +17,6 @@ export class UserRatingComponent implements OnInit {
   r2=0;
  
     ngOnInit(): void {
-      console.log(this.book1);
         
       this.r1 = Fun.ratingCount(this.book1.rating);
     this.r2 = Fun.averageRating(this.book1.rating)

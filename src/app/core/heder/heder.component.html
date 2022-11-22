@@ -3,16 +3,8 @@
         <ul>
 
             <li>
-                <a routerLink='/books/books-list' routerLinkActive="active">BOOKS</a>
+                <a routerLink='/' routerLinkActive="active">BOOKS</a>
             </li>
-
-            <li>
-                <a routerLink='/books/add' routerLinkActive="active">Add book</a>
-            </li>
-            <li>
-                <a routerLink='/books/add1' routerLinkActive="active">Add book</a>
-            </li>
-
 
             <!-- <div className=" user-items">
                 {{isLoggedIn ? <NavLink to="/mybooks">My books</NavLink> : ""}
@@ -21,14 +13,14 @@
             </div> -->
 
 
-            <ul *ngIf="isAuth">
-                <li>Welcome, {{isAuth.data.user.email}}!</li>
+            <ul *ngIf="isAuth()">
+                <li>Welcome, {{isAuth().data.user.email}}!</li>
                 <li>
                     <a routerLink="/" (click)="logout()">Logout</a>
                 </li>
             </ul>
 
-            <ul *ngIf="!isAuth">
+            <ul *ngIf="!isAuth()">
                 <li>
                     <a routerLink="/login" routerLinkActive="active">Login</a>
                 </li>

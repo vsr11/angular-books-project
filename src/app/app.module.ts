@@ -16,6 +16,8 @@ import { NgRatingBarModule } from '@zulkarnainshah/ng-rating-bar';
 import { AppComponent } from './app.component';
 import { AuthService } from './user/auth.service';
 import { AddBookComponent } from './books/add-book/add-book.component';
+import { isAdminGuard } from './shared/guards/is-admin.guard';
+import { UserService } from './user/user.service';
 
 
 
@@ -37,7 +39,7 @@ import { AddBookComponent } from './books/add-book/add-book.component';
    ],
 
  
-  providers: [AuthService],
+  providers: [AuthService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
