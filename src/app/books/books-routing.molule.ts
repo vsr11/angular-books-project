@@ -9,6 +9,7 @@ import { BookInfoComponent } from "./book-info/book-info.component";
 import { BookItemComponent } from './book-item/book-item.component';
 import { BooksListComponent } from "./books-list/books-list.component";
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { MyBooksComponent } from './my-books/my-books.component';
 
 
 const routes: Routes = [
@@ -43,8 +44,12 @@ const routes: Routes = [
     path:'edit/:id',
     canActivate: [isLoggedInGuard,isAdminGuard],
     component:EditBookComponent,
-  }
-  
+  },
+  {
+    path:'my-books',
+  canActivate: [isLoggedInGuard],
+  component:MyBooksComponent,
+}
 ];
 
 @NgModule({

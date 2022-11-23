@@ -1,0 +1,26 @@
+.mybooks {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img {
+    width: 50px;
+}
+
+.title {
+    width: 30%;
+}
+
+.title h1 {
+    font-size: 1.8rem;
+}
+
+form {
+    width: 25rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -8,7 +8,10 @@
   </div>
 
   <div>
-    <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
+    <ng-rating-bar [disabled]="true" [rating]="r2" size="22px">
+    </ng-rating-bar>
+    <!-- <ng-rating-bar [animateOnHover]="false" [disabled]="dis" (ratingChanged)="onRatingChanged($event)" size="22px">
+    </ng-rating-bar> -->
   </div>
 
   <div *ngIf="isAuth">

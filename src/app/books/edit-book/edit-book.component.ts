@@ -1,4 +1,4 @@
-import { FormControl, FormGroup } from '@angular/forms';
+import {FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { IBook } from 'src/app/shared/interfaces';
@@ -58,14 +58,7 @@ export class EditBookComponent implements OnInit {
       if (!this.checks.includes(x.title)) {
         this.checks.push(x.title);
       } 
-      // else {
-      //   // this.checks.filter((y:any) => {return y != x.title});
-      //   let i = this.checks.indexOf(x.title);
-      //   if(i > -1){
-      //     this.checks = this.checks.splice(i, 1);
-      //   }
-      // }
-    });
+         });
     this.model.categories = this.checks;
     this.bookService.updateBook(this.id, this.model)
   }

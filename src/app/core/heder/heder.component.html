@@ -11,7 +11,9 @@
                 {{isLoggedIn ? <NavLink to="/myvotelist">My votes</NavLink> : ""}
                 {{isLoggedIn ? <NavLink to="/myreviewlist">My review </NavLink> : ""}
             </div> -->
-
+            <li>
+                <a routerLink='/books/my-books' routerLinkActive="active">MY BOOKS</a>
+            </li>
 
             <ul *ngIf="isAuth()">
                 <li>Welcome, {{isAuth().data.user.email}}!</li>

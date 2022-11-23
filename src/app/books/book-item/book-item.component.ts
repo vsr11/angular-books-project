@@ -20,8 +20,12 @@ export class BookItemComponent implements OnInit {
   isAuth = this.auth.isAuth;
   readBook: boolean = false;
   readList:string[] = []
+  @Input() disabled!: boolean;
+  user:any;
+ 
+
   
-  user:any
+
   ngOnInit(): void {
     this.r1 = Fun.ratingCount(this.book.rating);
     this.r2 = Fun.averageRating(this.book.rating);
