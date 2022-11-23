@@ -3,11 +3,12 @@ import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import { Observable, Observer } from 'rxjs';
+import { IVote } from '../shared/interfaces/vote';
 
 @Injectable()
 export class BooksService {
 constructor(private http: HttpClient, private router: Router) { }
+
 err1:any;
 
 getAllBooks(cat = '', sort = ''){
@@ -18,21 +19,13 @@ getOneBook(id: string){
   return this.http.get<IBook>('http://localhost:5000/books/' + id)
 }
 
-
-// import { API_KEY, BOOKS_BASE_URL } from "../constants";
-
   getByIsbn (isbn: number) {
     return this.http.get<IBook>("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn + "&key=" + environment.API_KEY)
   }
 
 addBook(book: IBook|undefined){
   return this.http.post<IBook>('http://localhost:5000/books/', book)
-  // .subscribe(()=>{
-  //   this.router.navigate(['/'])
-  // },
-  // (e)=>{this.err1=e.error}
-  // );
-}
+ }
 
 updateBook(bookId: string, data: IBook){
   this.http.patch<IBook>('http://localhost:5000/books/' + bookId, data) 
@@ -47,4 +40,11 @@ updateBook(bookId: string, data: IBook){
   (e)=>{this.err1=e.error}
   );
  }
+
+ addVote(data: IVote){
+  return this.http.post('http://localhost:5000/votes/', data);
+ }
+getOneVote(idUser :number, idBook :string): any {
+  return this.http.get<IVote>('http://localhost:5000/votes/?user_id='+idUser+'&book_id='+idBook);
+}
 }
