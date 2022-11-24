@@ -1,35 +1,28 @@
-<div class="mybooks" *ngFor="let book of readList1; index as i">
+<div class="mybooks" *ngFor="let vote of list; index as i">
   <div class="img">
-    <img src={{book?.img}} alt="" />
+    <img src={{vote?.img}} alt="" />
   </div>
   <div class="title">
-    <a [routerLink]="['/books/book-info', book.id]">
-      <h1>{{book?.title}}</h1>
+    <a [routerLink]="['/books/book-info', vote.book_id]">
+      <h1>{{vote?.title}}</h1>
     </a>
   </div>
-  <ng-rating-bar [animateOnHover]="false" [disabled]="dis" (ratingChanged)="onRatingChanged($event)" size="22px">
-  </ng-rating-bar>
-  <form #voteForum="ngForm" (ngSubmit)="vote()">
+  <div *ngIf="vote.rating">
+    <ng-rating-bar [rating]="vote.rating" (ratingChanged)="onRatingChanged($event, vote.id)" size="22px">
+    </ng-rating-bar>
+    <!-- <ng-rating-bar [disabled]="true" [rating]="vote.rating" size="22px"></ng-rating-bar> -->
+  </div>
+  <div *ngIf="!vote.rating">
+    <button *ngIf="!clicked" (click)="clicked=true">Rate this book</button>
+    <div *ngIf="clicked">
+      <ng-rating-bar [rating]="0" (ratingChanged)="onRatingChanged($event,vote.id)" size="22px">
+      </ng-rating-bar>
+    </div>
+  </div>
+  <!--  -->
+  <!-- <form #voteForum="ngForm" (ngSubmit)="vote()">
     <textarea id="aaa" [(ngModel)]="model.review" [ngModelOptions]="{standalone: true}"></textarea>
     <input type="submit" value="Save" />
-  </form>
-  {{voteForum}}
+  </form> -->
+
 </div>
-<!-- <div className="mybooks" key={book.id}>
-    <div className="img">
-      <img src={book?.img || no_book} alt="" />
-    </div>
-
-    <NavLink to={"/info/" + book.id} className="title">
-      <h1>{book?.title}</h1>
-    </NavLink>
-
-    <div>{ratingCalc?.averageRating(book?.rating).toFixed(2)}</div>
-
-    <div className="vote">
-      <MyVote idUser={auth?.user?.id} idBook={book?.id} size="30" />
-    </div>
-    <div>
-      <NavLink to={"/myreview/" + book.id}>Write a review</NavLink>
-    </div>
-  </div> -->

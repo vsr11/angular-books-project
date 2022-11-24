@@ -36,15 +36,24 @@ updateBook(bookId: string, data: IBook){
 
  del(bookId: string){
   this.http.delete('http://localhost:5000/books/' + bookId)
-  .subscribe(()=>this.router.navigate(['/']),
-  (e)=>{this.err1=e.error}
-  );
+  // .subscribe(()=>this.router.navigate(['/']),
+  // (e)=>{this.err1=e.error}
+  // );
  }
 
  addVote(data: IVote){
   return this.http.post('http://localhost:5000/votes/', data);
  }
+
+ updateVote(id: number, data: any){
+  return this.http.patch('http://localhost:5000/votes/' + id, data);
+ }
+
 getOneVote(idUser :number, idBook :string): any {
   return this.http.get<IVote>('http://localhost:5000/votes/?user_id='+idUser+'&book_id='+idBook);
+}
+
+getAllVotesByUser(idUser :number){
+  return this.http.get<IVote>('http://localhost:5000/votes/?user_id='+idUser);
 }
 }

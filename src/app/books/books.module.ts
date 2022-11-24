@@ -39,7 +39,7 @@ import { MyBooksComponent } from './my-books/my-books.component';
   providers: [BooksService, UserService],
   exports:[
     BooksListComponent,
-  
+    MyBooksComponent,
   ]
 })
 export class BooksModule { }

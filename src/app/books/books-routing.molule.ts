@@ -46,9 +46,8 @@ const routes: Routes = [
     component:EditBookComponent,
   },
   {
-    path:'my-books',
-  canActivate: [isLoggedInGuard],
-  component:MyBooksComponent,
+   path:'my-books',
+    component:MyBooksComponent
 }
 ];
 
