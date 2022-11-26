@@ -29,10 +29,14 @@ export class LoginComponent implements OnInit {
     this.http.post('http://localhost:5000/signin', this.model)
     .subscribe((data: any)=>{
       if(localStorage.getItem('userData')){
+        // this.isAuth = true;
+        // this.authService.isAuth = true;
         this.router.navigate(['/']);
       } else {
         localStorage.setItem('userData', JSON.stringify({data}));
+        // this.authService.isAuth = true;
         this.isAuth = this.authService.isAuth;
+        // this.isAuth = true;
         this.router.navigate(['/']);
       }
       

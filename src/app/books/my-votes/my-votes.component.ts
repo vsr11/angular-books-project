@@ -30,9 +30,7 @@ export class MyVotesComponent implements OnInit {
     let p = this.router.snapshot.params['voteId'];
     this.bookService.getOneVoteById(p)
     .subscribe((d:any)=>{this.myvote = d[0]; 
-      console.log(this.myvote)
       this.model.review = this.myvote.review;
-      console.log(this.model.review);
     });
     
     

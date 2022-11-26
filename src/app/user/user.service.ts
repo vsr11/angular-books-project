@@ -13,16 +13,9 @@ export class UserService {
   }
 
   getOne(id:any){
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    // console.log(id);
-=======
-    // if(!id){
-      // return;
-    // }
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+    if(!id){
+      return;
+    }
     return this.http.get('http://localhost:5000/users/' + id)
   }
   
@@ -34,7 +27,6 @@ export class UserService {
 
   getUser(){
     let user:any = localStorage.getItem('userData');
-    console.log('zzz ', user);
     user = JSON.parse(user!);
     user = user.data.user;
     return user;

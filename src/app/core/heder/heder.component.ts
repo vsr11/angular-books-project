@@ -8,23 +8,11 @@ import { AuthService } from '../../user/auth.service';
   styleUrls: ['./heder.component.css']
 })
 export class HederComponent {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  constructor(private auth: AuthService,private router:Router) { }
-  isAuth(){
-    return JSON.parse(this.auth.user!);
-  }
-=======
-  auth = this.authService;
-  isAuth = this.authService.isAuth;
->>>>>>> Stashed changes
-=======
   constructor(private authService: AuthService,private router:Router) { }
-  auth = this.authService;
-  isAuth = this.authService.isAuth;
->>>>>>> Stashed changes
   
-  constructor(private authService: AuthService,private router:Router) { }
+ auth = this.authService;
+  get isAuth():boolean {return this.authService.isAuth}
+  
 
   logout(){
     localStorage.removeItem('userData');

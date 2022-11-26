@@ -7,7 +7,7 @@ import { AuthService } from '../../user/auth.service';
 export class isLoggedInGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router){};
   canActivate(): boolean {
-    if (this.authService.user){
+    if (this.authService.isAuth){
       return true
     } else {
       this.router.navigate(['/']);

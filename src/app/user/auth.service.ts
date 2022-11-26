@@ -5,30 +5,22 @@ import { Router } from '@angular/router';
 export class AuthService {
   constructor(private router:Router) { }
   
-  get user(): any {
-    return localStorage.getItem('userData');
-  }
+  // get user(): any {
+  //   return localStorage.getItem('userData');
+  // }
   
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  get isAuth() {
-    return JSON.parse(this.user!);
-=======
-  get getAuth():any|undefined{
-    return JSON.parse(this.user);
+  
+
+  get isAuth(): boolean{
+    let x:any = localStorage.getItem('userData');
+    if(!x){return false;}
+    // return Boolean(JSON.parse(x.data.id));
+    return true;
   }
 
-  get isAuth() {
-    return JSON.parse(this.user);
->>>>>>> Stashed changes
-=======
   getAuth(){
-    return JSON.parse(this.user);
-  }
-
-  get isAuth() {
-    return Boolean(JSON.parse(this.user));
->>>>>>> Stashed changes
+    let x:any = localStorage.getItem('userData');
+    return JSON.parse(x);
   }
   
   logout(){
@@ -42,10 +34,7 @@ export class AuthService {
     return x.data.user.role === 'admin';
   }
 
-<<<<<<< Updated upstream
 get getReadList(){
   return this.getAuth().data.user.booksRead;
 }
-=======
->>>>>>> Stashed changes
 }

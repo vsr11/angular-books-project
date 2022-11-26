@@ -35,11 +35,10 @@ export class MyBooksComponent implements OnInit {
     
     onRatingChanged(event:any){
       this.dis=true;
-       console.log(event);
   
     }
   ngOnInit(): void {
-    this.userService.getOne(this.auth.getAuth().data.user.id).subscribe(d=>{
+    this.userService.getOne(this.auth.getAuth().data.user.id)?.subscribe(d=>{
       this.user=d
       this.readList = this.user.booksRead;
           
@@ -58,7 +57,6 @@ for(let i=0;i<this.readList1.length; i++){
 }
 
 vote(){
-console.log(this.model);
 
 }
 }

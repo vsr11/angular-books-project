@@ -12,12 +12,16 @@ import { BooksService } from '../books.service';
   styleUrls: ['./book-item.component.css']
 })
 export class BookItemComponent implements OnInit {
-  constructor(private userService: UserService, private router: Router, private auth: AuthService, private bookService: BooksService){}
+  constructor(private userService: UserService,
+     private router: Router, private authService: AuthService,
+      private bookService: BooksService){}
   
   @Input() book!: IBook;
   r1 = 0;
   r2 = 0;
-  isAuth = this.auth.isAuth;
+  get isAuth():boolean {return this.authService.isAuth}
+//  isAuth = this.authService.isAuth
+  
   readBook: boolean = false;
   readList: string[] = []
   @Input() disabled!: boolean;
@@ -27,15 +31,9 @@ export class BookItemComponent implements OnInit {
     this.r1 = Fun.ratingCount(this.book.rating);
     this.r2 = Fun.averageRating(this.book.rating);
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-this.userService.getOne(this.isAuth.data.user.id).subscribe(d=>{
-=======
-this.userService.getOne(this.auth.getAuth.data.user.id)?.subscribe(d=>{
->>>>>>> Stashed changes
-=======
-this.userService.getOne(this.auth.getAuth().data.user.id).subscribe(d=>{
->>>>>>> Stashed changes
+// this.userService.getOne(this.isAuth.data.user.id).subscribe(d=>{
+this.userService.getOne(this.authService.getAuth()?.data.user.id)?.subscribe(d=>{
+// this.userService.getOne(this.auth.getAuth().data.user.id).subscribe(d=>{
   this.user = d;
   this.readList = this.user.booksRead;
   this.bookService.getOneVote(this.user.id, this.book.id)

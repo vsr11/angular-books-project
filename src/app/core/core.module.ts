@@ -6,6 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AsideComponent } from './aside/aside.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AuthService } from '../user/auth.service';
 
 
 
@@ -26,6 +27,7 @@ import { AppRoutingModule } from '../app-routing.module';
     HederComponent,
     AsideComponent,
     AppRoutingModule
- ] 
+ ], 
+  providers: [AuthService] 
 })
 export class CoreModule { }
