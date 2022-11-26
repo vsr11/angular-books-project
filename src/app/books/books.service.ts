@@ -46,7 +46,7 @@ updateBook(bookId: string, data: IBook){
 getOneVote(idUser :number, idBook :string): any {
   return this.http.get<IVote>
   ('http://localhost:5000/votes/?user_id='+idUser+
-  '&book_id='+idBook);
+'&book_id='+idBook);
 }
 
 getOneVoteById(id1:number){
@@ -55,7 +55,7 @@ getOneVoteById(id1:number){
 }
 
 getAllVotesByUser(idUser :number){
-  return this.http.get<IVote>('http://localhost:5000/votes/?user_id='+idUser);
+  return this.http.get<IVote[]>('http://localhost:5000/votes/?user_id='+idUser);
 }
 getAllVotesByBook(idBook :string){
   return this.http.get<IVote[]>('http://localhost:5000/votes/?book_id='+idBook);

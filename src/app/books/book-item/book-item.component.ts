@@ -19,8 +19,8 @@ export class BookItemComponent implements OnInit {
   @Input() book!: IBook;
   r1 = 0;
   r2 = 0;
-  get isAuth():boolean {return this.authService.isAuth}
-//  isAuth = this.authService.isAuth
+  // get isAuth(){return this.authService.isAuth}
+ isAuth = this.authService.isAuth
   
   readBook: boolean = false;
   readList: string[] = []

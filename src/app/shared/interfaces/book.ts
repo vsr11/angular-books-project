@@ -7,6 +7,8 @@ export interface IBook {
   pageCount: number,
   img: string,
   rating: number[],
+  avg:number,
+  count:number,
   description: string,
   language: string,
   categories: string[],

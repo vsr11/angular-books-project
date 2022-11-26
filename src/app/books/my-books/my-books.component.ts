@@ -13,48 +13,36 @@ import { IBook } from 'src/app/shared/interfaces';
 })
 export class MyBooksComponent implements OnInit {
   user: any;
-  isAuth = this.auth.isAuth;
+  // isAuth = this.auth.isAuth;
+  get isAuth(){return this.auth.isAuth}
+
   vote: any | null;
   list: any;
   book: any | undefined;
   
   dis: boolean = false;
-  // title:string = '';
-
+  
   constructor(private router: Router, private auth: AuthService, private bookService: BooksService){}
-
-  // clicked=false;
-  // clicked1=false;
-  // clicked2=false;
 
   ngOnInit(): void {
 
-this.bookService.getAllVotesByUser(this.auth.getAuth().data.user.id)
+this.bookService.getAllVotesByUser(this.auth.getAuth()?.data.user.id)
 .subscribe((d:any)=>{
   this.list=d;
+   
    for(let i in d){
   this.bookService.getOneBook(d[i].book_id).subscribe((d1)=>{
     this.list[i].title = d1.title;
     this.list[i].img = d1.img;
      })}
   });
-
 }
 onRatingChanged(event:any, voteId: number){
-  
-  // this.bookService.getOneVote(this.isAuth.data.user.id, voteId)
+ 
   this.bookService.updateVote(voteId, { rating: event }).subscribe();
   this.router.navigate(['/books/my-vote/', voteId]);
 };
 
-// onRatingChanged(event:any, voteId: number){
-//   // this.clicked1=false;
-//   // this.clicked2=true;
-//   // this.bookService.getOneVote(this.auth.getAuth().data.user.id, voteId)
-//   this.bookService.updateVote(voteId, { rating: event })
-//   .subscribe(()=>{});
-//   // .subscribe(()=>this.router.navigate(['/books/my-books']));
-//   //  console.log(voteId);
 clicked1(voteId:number){
   this.router.navigate(['/books/my-vote/', voteId]);
 };

@@ -48,11 +48,13 @@ extactBookData(bookObj: any, extraDataToAdd = {}): IBook{
     publishedDate: newData?.volumeInfo?.publishedDate,
     pageCount: newData?.volumeInfo?.pageCount,
     img: newData?.volumeInfo?.imageLinks?.thumbnail || "",
-    rating: [0, 0, 0, 0, 0],
     description: newData?.volumeInfo?.description,
     language: newData?.volumeInfo?.language,
     categories: [],
-    ...extraDataToAdd,
+    rating: [0, 0, 0, 0, 0],
+    avg:0,
+    count:0,
+        ...extraDataToAdd,
   };
   return onebook;
 },

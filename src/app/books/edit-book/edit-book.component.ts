@@ -60,7 +60,8 @@ export class EditBookComponent implements OnInit {
       } 
          });
     this.model.categories = this.checks;
-    this.bookService.updateBook(this.id, this.model).subscribe(()=>this.router.navigate(['/books', 'book-info', this.id]));
+    this.bookService.updateBook(this.id, this.model)
+    .subscribe(()=>this.router.navigate(['/books', 'book-info', this.id]));
   }
 
   del(bookId: string){    
