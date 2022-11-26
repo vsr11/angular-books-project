@@ -28,9 +28,13 @@ export class BookItemComponent implements OnInit {
     this.r2 = Fun.averageRating(this.book.rating);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 this.userService.getOne(this.isAuth.data.user.id).subscribe(d=>{
 =======
 this.userService.getOne(this.auth.getAuth.data.user.id)?.subscribe(d=>{
+>>>>>>> Stashed changes
+=======
+this.userService.getOne(this.auth.getAuth().data.user.id).subscribe(d=>{
 >>>>>>> Stashed changes
   this.user = d;
   this.readList = this.user.booksRead;

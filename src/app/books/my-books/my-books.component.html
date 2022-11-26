@@ -1,3 +1,4 @@
+<h1>My votes</h1>
 <div class="mybooks" *ngFor="let vote of list; index as i">
   <div class="img">
     <img src={{vote?.img}} alt="" />
@@ -7,22 +8,12 @@
       <h1>{{vote?.title}}</h1>
     </a>
   </div>
-  <div *ngIf="vote.rating">
-    <ng-rating-bar [rating]="vote.rating" (ratingChanged)="onRatingChanged($event, vote.id)" size="22px">
-    </ng-rating-bar>
-    <!-- <ng-rating-bar [disabled]="true" [rating]="vote.rating" size="22px"></ng-rating-bar> -->
-  </div>
+  <ng-rating-bar [disabled]="true" [rating]="vote.rating" size="22px">
+  </ng-rating-bar>
   <div *ngIf="!vote.rating">
-    <button *ngIf="!clicked" (click)="clicked=true">Rate this book</button>
-    <div *ngIf="clicked">
-      <ng-rating-bar [rating]="0" (ratingChanged)="onRatingChanged($event,vote.id)" size="22px">
-      </ng-rating-bar>
-    </div>
+    <button (click)="clicked1(vote.id)">Rate this book</button>
   </div>
-  <!--  -->
-  <!-- <form #voteForum="ngForm" (ngSubmit)="vote()">
-    <textarea id="aaa" [(ngModel)]="model.review" [ngModelOptions]="{standalone: true}"></textarea>
-    <input type="submit" value="Save" />
-  </form> -->
-
+  <div *ngIf="vote.rating">
+    <button (click)="clicked1(vote.id)">Edit rate</button>
+  </div>
 </div>

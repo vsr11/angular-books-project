@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap, tap } from 'rxjs/operators';
 import { IBook } from 'src/app/shared/interfaces';
 import { BooksService } from '../books.service';
-
 @Component({
   selector: 'app-book-info',
   templateUrl: './book-info.component.html',
@@ -12,7 +10,7 @@ import { BooksService } from '../books.service';
 export class BookInfoComponent implements OnInit {
   book: IBook | undefined;
   book1: IBook | undefined;
-  id: string|undefined;
+  id: string | undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,11 +19,8 @@ export class BookInfoComponent implements OnInit {
   
 
   ngOnInit(): void {
-    
-    this.activatedRoute.params.pipe(
-      tap(() => this.book = undefined),
-      switchMap(({ id }) => id=this.bookService.getOneBook(id)))
-      .subscribe(book=>this.book=book)
-          }
-
+    this.id = this.activatedRoute.snapshot.params['id'];
+    this.book = undefined;
+    this.bookService.getOneBook(this.id!).subscribe(book => this.book = book)
+  }
 }

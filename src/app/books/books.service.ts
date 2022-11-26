@@ -28,17 +28,11 @@ addBook(book: IBook|undefined){
  }
 
 updateBook(bookId: string, data: IBook){
-  this.http.patch<IBook>('http://localhost:5000/books/' + bookId, data) 
-  .subscribe(()=>this.router.navigate(['/books', 'book-info', bookId]),
-  (e)=>{this.err1=e.error}
-  );
+  return this.http.patch<IBook>('http://localhost:5000/books/' + bookId, data);
  }
 
  del(bookId: string){
-  this.http.delete('http://localhost:5000/books/' + bookId)
-  // .subscribe(()=>this.router.navigate(['/']),
-  // (e)=>{this.err1=e.error}
-  // );
+  return this.http.delete('http://localhost:5000/books/' + bookId);
  }
 
  addVote(data: IVote){
@@ -50,10 +44,20 @@ updateBook(bookId: string, data: IBook){
  }
 
 getOneVote(idUser :number, idBook :string): any {
-  return this.http.get<IVote>('http://localhost:5000/votes/?user_id='+idUser+'&book_id='+idBook);
+  return this.http.get<IVote>
+  ('http://localhost:5000/votes/?user_id='+idUser+
+  '&book_id='+idBook);
+}
+
+getOneVoteById(id1:number){
+  return this.http.get<IVote>
+  ('http://localhost:5000/votes/?id='+id1);
 }
 
 getAllVotesByUser(idUser :number){
   return this.http.get<IVote>('http://localhost:5000/votes/?user_id='+idUser);
+}
+getAllVotesByBook(idBook :string){
+  return this.http.get<IVote[]>('http://localhost:5000/votes/?book_id='+idBook);
 }
 }

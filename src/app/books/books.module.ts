@@ -15,6 +15,7 @@ import { EditBookComponent } from './edit-book/edit-book.component';
 import { UserRatingComponent } from './user-rating/user-rating.component';
 import { UserService } from '../user/user.service';
 import { MyBooksComponent } from './my-books/my-books.component';
+import { MyVotesComponent } from './my-votes/my-votes.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MyBooksComponent } from './my-books/my-books.component';
     EditBookComponent,
     UserRatingComponent,
     MyBooksComponent,
+    MyVotesComponent,
     
   ],
   imports: [

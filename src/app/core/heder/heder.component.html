@@ -10,14 +10,19 @@
             </li>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <ul *ngIf="isAuth()">
                 <li>Welcome, {{isAuth().data.user.email}}!</li>
+=======
+            <ul *ngIf="isAuth">
+                <li>Welcome, {{auth.getAuth().data.user.email}}!</li>
+>>>>>>> Stashed changes
                 <li>
                     <a routerLink="/" (click)="logout()">Logout</a>
                 </li>
             </ul>
 
-            <ul *ngIf="!isAuth()">
+            <ul *ngIf="!isAuth">
                 <li>
                     <a routerLink="/login" routerLinkActive="active">Login</a>
                 </li>

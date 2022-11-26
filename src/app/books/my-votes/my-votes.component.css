@@ -1,0 +1,20 @@
+.myvote {
+    /* background-color: aqua; */
+    width: 30rem;
+    text-align: center;
+    border: 2px solid;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+textarea {
+    margin: 2rem 0;
+}
+
+/* .buttons {
+    display: flex;
+    justify-content: space-evenly;
+} */
+input {
+    margin: 0 3rem;
+}

@@ -39,7 +39,7 @@ export class MyBooksComponent implements OnInit {
   
     }
   ngOnInit(): void {
-    this.userService.getOne(this.isAuth.data.user.id).subscribe(d=>{
+    this.userService.getOne(this.auth.getAuth().data.user.id).subscribe(d=>{
       this.user=d
       this.readList = this.user.booksRead;
           

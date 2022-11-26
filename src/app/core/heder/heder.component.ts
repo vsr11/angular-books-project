@@ -9,11 +9,17 @@ import { AuthService } from '../../user/auth.service';
 })
 export class HederComponent {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   constructor(private auth: AuthService,private router:Router) { }
   isAuth(){
     return JSON.parse(this.auth.user!);
   }
 =======
+  auth = this.authService;
+  isAuth = this.authService.isAuth;
+>>>>>>> Stashed changes
+=======
+  constructor(private authService: AuthService,private router:Router) { }
   auth = this.authService;
   isAuth = this.authService.isAuth;
 >>>>>>> Stashed changes

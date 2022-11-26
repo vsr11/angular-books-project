@@ -10,7 +10,7 @@ import { BookItemComponent } from './book-item/book-item.component';
 import { BooksListComponent } from "./books-list/books-list.component";
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { MyBooksComponent } from './my-books/my-books.component';
-
+import {MyVotesComponent} from './my-votes/my-votes.component'
 
 const routes: Routes = [
   {
@@ -48,7 +48,12 @@ const routes: Routes = [
   {
    path:'my-books',
     component:MyBooksComponent
+},
+{
+  path: 'my-vote/:voteId',
+  component: MyVotesComponent
 }
+
 ];
 
 @NgModule({
