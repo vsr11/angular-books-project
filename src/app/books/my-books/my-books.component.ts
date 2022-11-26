@@ -20,10 +20,17 @@ export class MyBooksComponent implements OnInit {
   dis: boolean = false;
   // title:string = '';
 
+<<<<<<< Updated upstream
   constructor(private auth: AuthService, private bookService: BooksService){}
 
   clicked=false;
   ngOnInit(): void {
+=======
+  constructor(private router: Router,
+     private auth: AuthService, private bookService: BooksService){}
+
+    ngOnInit(): void {
+>>>>>>> Stashed changes
 
 this.bookService.getAllVotesByUser(this.isAuth.data.user.id)
 .subscribe((d:any)=>{
@@ -39,11 +46,17 @@ this.bookService.getAllVotesByUser(this.isAuth.data.user.id)
 });
 
 }
+<<<<<<< Updated upstream
 onRatingChanged(event:any, voteId: number){
   
   // this.bookService.getOneVote(this.isAuth.data.user.id, voteId)
   this.bookService.updateVote(voteId, { rating: event }).subscribe();
    console.log(voteId);
+=======
+clicked1(voteId:number){
+  this.router.navigate(['/books/my-vote/', voteId]);
+};
+>>>>>>> Stashed changes
 
 }
 }

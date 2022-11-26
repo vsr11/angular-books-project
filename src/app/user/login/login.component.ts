@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/']);
       } else {
         localStorage.setItem('userData', JSON.stringify({data}));
+        this.isAuth = this.authService.isAuth;
         this.router.navigate(['/']);
       }
       

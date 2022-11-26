@@ -5,16 +5,11 @@
             <li>
                 <a routerLink='/' routerLinkActive="active">BOOKS</a>
             </li>
-
-            <!-- <div className=" user-items">
-                {{isLoggedIn ? <NavLink to="/mybooks">My books</NavLink> : ""}
-                {{isLoggedIn ? <NavLink to="/myvotelist">My votes</NavLink> : ""}
-                {{isLoggedIn ? <NavLink to="/myreviewlist">My review </NavLink> : ""}
-            </div> -->
             <li>
                 <a routerLink='/books/my-books' routerLinkActive="active">MY BOOKS</a>
             </li>
 
+<<<<<<< Updated upstream
             <ul *ngIf="isAuth()">
                 <li>Welcome, {{isAuth().data.user.email}}!</li>
                 <li>
@@ -31,7 +26,25 @@
                 </li>
             </ul>
 
+=======
+            <li>
+                <ul *ngIf="isAuth">
+                    <li>Welcome, {{auth.getAuth.data.user.name}}!</li>
+                    <li>
+                        <a routerLink="/" (click)="logout()">Logout</a>
+                    </li>
+                </ul>
+>>>>>>> Stashed changes
 
+                <ul *ngIf="!isAuth">
+                    <li>
+                        <a routerLink="/login" routerLinkActive="active">Login</a>
+                    </li>
+                    <li>
+                        <a routerLink="/register" routerLinkActive="active">Register</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </div>

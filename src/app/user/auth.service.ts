@@ -9,8 +9,17 @@ export class AuthService {
     return localStorage.getItem('userData');
   }
   
+<<<<<<< Updated upstream
   get isAuth() {
     return JSON.parse(this.user!);
+=======
+  get getAuth():any|undefined{
+    return JSON.parse(this.user);
+  }
+
+  get isAuth() {
+    return JSON.parse(this.user);
+>>>>>>> Stashed changes
   }
   
   logout(){
@@ -24,7 +33,10 @@ export class AuthService {
     return x.data.user.role === 'admin';
   }
 
+<<<<<<< Updated upstream
 get getReadList(){
   return this.isAuth.data.user.booksRead;
 }
+=======
+>>>>>>> Stashed changes
 }

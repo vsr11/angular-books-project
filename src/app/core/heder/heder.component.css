@@ -1,11 +1,13 @@
 #header {
 
     width: 95vw;
-    padding: 0 6rem;
+    padding: 0 4rem;
     margin: auto;
-    font-size: 1.5rem;
-    border-bottom: 3px solid;
-    font-family: "Taviraj", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 2px solid;
+    /* background-color: rgb(215, 225, 234); */
+    /* font-family: "Taviraj", serif; */
 }
 
 
@@ -32,4 +34,5 @@ a {
 
 .active {
     color: red;
+
 }

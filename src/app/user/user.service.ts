@@ -13,7 +13,13 @@ setOneUser(d:any){
 }
 
   getOne(id:any){
+<<<<<<< Updated upstream
     // console.log(id);
+=======
+    // if(!id){
+      // return;
+    // }
+>>>>>>> Stashed changes
     return this.http.get('http://localhost:5000/users/' + id)
     // .subscribe(d=>this.setOneUser(d));
   }

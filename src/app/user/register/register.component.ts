@@ -21,7 +21,6 @@ err1:any;
       password: '',
       repeatPassword:'',
       name: '',
-      booksRead: [],
       role: '',
       id: 0
     
