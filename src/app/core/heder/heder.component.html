@@ -1,15 +1,14 @@
 <div id="header">
     <nav>
         <ul>
-
             <li>
-                <a routerLink='/' routerLinkActive="active">BOOKS</a>
+                <a routerLink='/books/books-list' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    BOOKS</a>
             </li>
-            <li>
+
+            <li *ngIf="isAuth">
                 <a routerLink='/books/my-books' routerLinkActive="active">MY BOOKS</a>
             </li>
-
-
 
             <ul *ngIf="!isAuth">
                 <li>

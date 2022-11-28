@@ -18,7 +18,7 @@
     <button><a [routerLink]="['/books/edit/', book?.id]">EDIT</a></button>
 
 
-    <div className="bibliography">
+    <div class="bibliography">
         <h1>Bibliographic information</h1>
         <table>
             <tbody>
@@ -75,7 +75,6 @@
     </div>
     <div>
         <h1>User ratings</h1>
-        <!-- <UserRating arr={{book?.rating || []}} /> -->
         <app-user-rating [book1]="book" *ngIf="book"></app-user-rating>
     </div>
 </div>

@@ -1,9 +1,9 @@
 <!-- {{this.catArr?.length}} -->
-<div className="aside">
-  <div className="categories">
+<div class="aside">
+  <div class="categories">
     <h2>CATEGORIES</h2>
 
-    <div className="item-categories">
+    <div class="item-categories">
 
       <ul *ngFor="let cat of allCategoris">
         <li><a routerLinkActive="active" routerLink="/books/books-list" [queryParams]="{ category: cat }"
@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    <div className="sort">
+    <div class="sort">
       <h2>RATING</h2>
       <ul>
         <li>
@@ -32,13 +32,13 @@
 </div>
 
 
-<!-- <div className="sort">
+<!-- <div class="sort">
       <h1>Rating</h1>
       <ul>
         <li>
           <Link
             to="?sort=sortCount"
-            className={isActive1 ? activeClassName : ""}
+            class={isActive1 ? activeClassName : ""}
           >
             Most read books
           </Link>
@@ -47,7 +47,7 @@
         <li>
           <Link
             to="?sort=sortAv"
-            className={isActive2 ? activeClassName : ""}
+            class={isActive2 ? activeClassName : ""}
           >
             Highest rated books
           </Link>

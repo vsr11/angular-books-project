@@ -1,17 +1,17 @@
 <div class="book-item">
   <div class="img">
-    <a [routerLink]="['/books/book-info', book.id]"><img src={{book.img}} alt="" /></a>
+    <a [routerLink]="['/books/book-info', book.id]"
+      ><img src="{{ book.img }}" alt=""
+    /></a>
   </div>
 
   <div class="title">
-    <a [routerLink]="['/books/book-info', book.id]">{{book.title}}</a>
+    <a [routerLink]="['/books/book-info', book.id]">{{ book.title }}</a>
   </div>
 
   <div>
-    <ng-rating-bar [disabled]="true" [rating]="r2" size="22px">
+    <ng-rating-bar [disabled]="true" [rating]="book.avg" size="22px">
     </ng-rating-bar>
-    <!-- <ng-rating-bar [animateOnHover]="false" [disabled]="dis" (ratingChanged)="onRatingChanged($event)" size="22px">
-    </ng-rating-bar> -->
   </div>
 
   <div *ngIf="isAuth">

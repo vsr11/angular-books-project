@@ -1,37 +1,52 @@
 <div class="login">
-    <form #logForum="ngForm" (ngSubmit)="login()">
-        <div class="input">
-            <label htmlFor="email">E-mail:</label>
-            <input type="email" id="email" name="email" [(ngModel)]="model.email" #email="ngModel" required email />
-            <div class="err" [hidden]="email.valid||email.untouched">Email is invalid</div>
-        </div>
-        <div class="input">
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel"
-                required minlength="4" maxlength="16" />
-            <div class="err" [hidden]="password.valid || password.untouched">
-                Password must be between 4 and 16 symbols
-            </div>
-        </div>
-
-        <div>
-            <input type="submit" [disabled]="logForum.form.invalid" value="Login" />
-            <!-- <input type="button" value="Exit" /> -->
-            <button routerLink="/">Exit</button>
-            <div *ngIf="err1" class="err2">
-                <div class="err1">
-                    <p>{{err1}}</p>
-                </div>
-                <div>
-                    <p>Don't have an account? <a routerLink="/register">Create one</a></p>
-                </div>
-            </div>
-
-        </div>
-    </form>
-    <div class="allerr">
-
-
-        <!-- <div class="err" *ngIf="err1">{{err1}}</div> -->
+  <form #logForum="ngForm" (ngSubmit)="login()">
+    <div class="input">
+      <label htmlFor="email">E-mail:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="model.email"
+        #email="ngModel"
+        required
+        email
+      />
+      <div class="err" [hidden]="email.valid || email.untouched">
+        Email is invalid
+      </div>
     </div>
+    <div class="input">
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="model.password"
+        #password="ngModel"
+        required
+        minlength="4"
+        maxlength="16"
+      />
+      <div class="err" [hidden]="password.valid || password.untouched">
+        Password must be between 4 and 16 symbols
+      </div>
+    </div>
+
+    <div>
+      <input type="submit" [disabled]="logForum.form.invalid" value="Login" />
+      <!-- <input type="button" value="Exit" /> -->
+      <button routerLink="/">Exit</button>
+      <div *ngIf="err1" class="err2">
+        <div class="err1">
+          <p>{{ err1 }}</p>
+        </div>
+        <div>
+          <p>Don't have an account? <a routerLink="/register">Create one</a></p>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="allerr">
+    <!-- <div class="err" *ngIf="err1">{{err1}}</div> -->
+  </div>
 </div>

@@ -5,11 +5,6 @@ import { Router } from '@angular/router';
 export class AuthService {
   constructor(private router:Router) { }
   
-  // get user(): any {
-  //   return localStorage.getItem('userData');
-  // }
-  
-  
 
   get isAuth(): boolean {
     let x:any = localStorage.getItem('userData');
@@ -23,19 +18,18 @@ export class AuthService {
     let x:any = localStorage.getItem('userData');
     return JSON.parse(x);
   }
+  get isAdmin(){
+    let x: any = localStorage.getItem('userData');
+    x = JSON.parse(x);
+    return x.data.user.role === 'admin';
+  }
   
   logout(){
     localStorage.removeItem('userData');
     this.router.navigate(['/']);
   }
 
-  get isAdmin(){
-    let x: any = localStorage.getItem('userData');
-    x = JSON.parse(x);
-    return x.data.user.role === 'admin';
-  }
+  
 
-get getReadList(){
-  return this.getAuth().data.user.booksRead;
-}
+
 }

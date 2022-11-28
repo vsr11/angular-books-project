@@ -24,3 +24,7 @@
 #allBooks {
     width: 100%;
 }
+
+#allBooks ::ng-deep .ngx-pagination .current {
+    background: #f3712e;
+}

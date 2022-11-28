@@ -29,7 +29,8 @@ export class UserRatingComponent implements OnInit {
           if(d[0].rating==2){this.arr1[3]++};
           if(d[0].rating==1){this.arr1[4]++};
 
-          this.r2 = Fun.averageRating(this.arr1)
+          // this.r2 = Fun.averageRating(this.arr1)
+          this.r2=this.book1.avg
   
     })}
   

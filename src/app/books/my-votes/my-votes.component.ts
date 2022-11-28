@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { count } from 'console';
+import { reduce } from 'rxjs';
 import { IVote } from 'src/app/shared/interfaces/vote';
 import { BooksService } from '../books.service';
 
@@ -19,16 +20,17 @@ export class MyVotesComponent implements OnInit {
   count1:number=0;
   avg1:number=0;
   // activatedRoute: any;
-
+  redirect = this.router1.snapshot.queryParams['redirect'] || '/';
+  
   constructor(private router1: ActivatedRoute, 
     private bookService: BooksService,
     private router2: Router) {
       this.model={
         review:''
-         }
-     }
-  
-  ngOnInit(): void {
+      }
+    }
+    
+    ngOnInit(): void {
     let p = this.router1.snapshot.params['voteId'];
     this.bookService.getOneVoteById(p)
     .subscribe((d:any)=>{this.myvote = d[0]; 
@@ -44,9 +46,8 @@ export class MyVotesComponent implements OnInit {
     this.bookService.updateVote(this.myvote.id,
       { rating: this.newRating, 
        review: this.model.review }).subscribe(()=>{
-              // this.router2.navigate(['/books/my-books'])
-  //    const redirectUrl = this.router1.snapshot.queryParams['redirectUrl'] || '/';
-  //    this.router2.navigate([redirectUrl]);
+// this.router2.navigate(['/books/my-books'])
+     this.router2.navigate([this.redirect]);
    });  
     this.bookService.getOneBook(this.myvote.book_id)
     .subscribe(d=>{
@@ -63,5 +64,5 @@ export class MyVotesComponent implements OnInit {
     
   }
 
-  exit(){ this.router2.navigate(['/books/my-books'])}
+  exit(){ this.router2.navigate([this.redirect])}
 }
