@@ -58,6 +58,31 @@ select {
     font: inherit;
 }
 
+button,
+input {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    border: 0;
+    margin: 0 1rem 1rem 0;
+    padding: 0.5rem 1rem;
+    line-height: 1;
+    background: #ece2e2;
+    font-size: 1.3rem;
+    border-radius: 0.7rem;
+}
+
+button:hover,
+button:focus,
+input:hover,
+input:focus {
+    border: 1px solid #f3712e;
+    color: #f3712e;
+    background: transparent;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {

@@ -1,18 +1,22 @@
 <div class="user-rating">
-    <div class="user-rating-left">
-        {{r2}}/5 {{n}}glasa
-        <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
-    </div>
-    <div class="user-rating-right">
-        <ng-container *ngFor="let x of arr">
-            <div class="right-row">
-                <div>
-                    {{x}} <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="bar-container">
-                    <div *ngIf="n" class="bar" [style.width]="arr1[5-x]*100/n+'%'"></div>
-                </div>
-                <div>{{arr1[5-x]}}</div>
-            </div>
-        </ng-container>
-    </div>
+  <div class="user-rating-left">
+    <div>{{ r2 }}</div>
+    <div>{{ r1 }} votes</div>
+    <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
+  </div>
+  <div class="user-rating-right">
+    <ng-container *ngFor="let x of arr">
+      <div class="right-row">
+        <div>{{ x }} <i class="fa-solid fa-star"></i></div>
+        <div class="bar-container">
+          <div
+            *ngIf="r1"
+            class="bar"
+            [style.width]="(arr1[5 - x] * 100) / r1 + '%'"
+          ></div>
+        </div>
+        <div>{{ arr1[5 - x] }}</div>
+      </div>
+    </ng-container>
+  </div>
+</div>

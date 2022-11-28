@@ -28,19 +28,20 @@ form label {
     width: 10rem;
 }
 
-input {
+.input {
+    display: flex;
     margin: 1rem 2rem;
 }
 
-input:hover {
+/*input:hover {
     background-color: aliceblue;
 }
 
 input:focus+.actions {
     border-color: #090;
-}
+}  */
 
-div:last-of-type input,
+/* div:last-of-type input,
 button {
 
     font-weight: bold;
@@ -57,7 +58,7 @@ button:hover {
     border: 1px solid;
     background-color: rgb(196, 215, 231);
     border-color: rgb(80, 93, 105);
-}
+} */
 
 .err {
     position: absolute;

@@ -11,7 +11,16 @@
 }
 
 .title {
-    width: 30%;
+    width: 50rem;
+}
+
+.stars {
+    width: 10rem;
+}
+
+.buttons {
+
+    width: 15rem;
 }
 
 h1 {

@@ -55,7 +55,12 @@
     transform: scale(1.1);
 }
 
-.book-item button {
+.button {
+    color: #f3712e;
+    font-weight: bold;
+}
+
+/* .book-item button {
     background-color: rgb(240, 207, 207);
     padding: 0.3rem 2rem;
     font-size: 1.3rem;
@@ -69,11 +74,10 @@
 .book-item button:hover {
     background-color: rgb(246, 169, 169);
     opacity: 1;
-    ;
 }
 
 .book-item .button {
     color: #f3712e;
     font-size: 1.3rem;
     font-weight: bold;
-}
+} */

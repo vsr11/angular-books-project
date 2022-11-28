@@ -1,22 +1,26 @@
 <h1>My votes</h1>
 <div class="mybooks" *ngFor="let vote of list; index as i">
   <div class="img">
-    <img src={{vote?.img}} alt="" />
+    <img src="{{ vote?.img }}" alt="" />
   </div>
 
   <div class="title">
     <a [routerLink]="['/books/book-info', vote.book_id]">
-      <h1>{{vote?.title}}</h1>
+      <h1>{{ vote?.title }}</h1>
     </a>
   </div>
 
-  <ng-rating-bar [disabled]="true" [rating]="vote.rating" size="22px">
-  </ng-rating-bar>
-
-  <div *ngIf="!vote.rating">
-    <button (click)="clicked(vote.id)">Rate this book</button>
+  <div class="stars">
+    <ng-rating-bar [disabled]="true" [rating]="vote.rating" size="22px">
+    </ng-rating-bar>
   </div>
-  <div *ngIf="vote.rating">
-    <button (click)="clicked(vote.id)">Edit rate</button>
+
+  <div class="buttons">
+    <div *ngIf="!vote.rating">
+      <button (click)="clicked(vote.id)">Rate this book</button>
+    </div>
+    <div *ngIf="vote.rating">
+      <button (click)="clicked(vote.id)">Edit</button>
+    </div>
   </div>
 </div>

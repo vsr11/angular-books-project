@@ -1,49 +1,85 @@
 <div class="login">
-    <form #regForum="ngForm" (ngSubmit)="register()">
-        <div>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" [(ngModel)]="model.name" #name="ngModel" required />
-        </div>
-        <div>
-            <label htmlFor="email">E-mail:</label>
-            <input type="email" id="email" name="email" [(ngModel)]="model.email" #email="ngModel" required email />
-        </div>
-        <div>
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel"
-                required minlength="4" maxlength="16" />
-        </div>
-        <div>
-            <label htmlFor="repeatPassword">Repeat Password:</label>
-            <input type="password" id="repeatPassword" name="repeatPassword" [(ngModel)]="model.repeatPassword"
-                #repeatPassword="ngModel" required />
-        </div>
-        <!-- <div class="err">{err}</div> -->
-        <div>
-            <input type="submit" [disabled]="regForum.form.invalid" value="Register" />
-            <button routerLink="/">Exit</button>
-        </div>
-        <p>Have an account ? <a routerLink="/login">Click here</a></p>
-    </form>
+  <form #regForum="ngForm" (ngSubmit)="register()">
+    <div class="input">
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="model.name"
+        #name="ngModel"
+        required
+      />
+    </div>
+    <div class="input">
+      <label htmlFor="email">E-mail:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="model.email"
+        #email="ngModel"
+        required
+        email
+      />
+    </div>
+    <div class="input">
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="model.password"
+        #password="ngModel"
+        required
+        minlength="4"
+        maxlength="16"
+      />
+    </div>
+    <div class="input">
+      <label htmlFor="repeatPassword">Repeat Password:</label>
+      <input
+        type="password"
+        id="repeatPassword"
+        name="repeatPassword"
+        [(ngModel)]="model.repeatPassword"
+        #repeatPassword="ngModel"
+        required
+      />
+    </div>
+    <!-- <div class="err">{err}</div> -->
+    <div class="input">
+      <input
+        type="submit"
+        [disabled]="regForum.form.invalid"
+        value="Register"
+      />
+      <button routerLink="/">Exit</button>
+    </div>
+    <p>Have an account ? <a routerLink="/login">Click here</a></p>
+  </form>
 
-    <div class="allerr">
-        <div class="err" [hidden]="name.valid || name.untouched">
-            Username is required
-        </div>
-        <div class="err" [hidden]="email.valid || email.untouched">
-            Email is invalid
-        </div>
-        <div class="err" [hidden]="password.valid || password.untouched">
-            Password must be between 4 and 16 symbols
-        </div>
-        <div class="err" [hidden]="
+  <div class="allerr">
+    <div class="err" [hidden]="name.valid || name.untouched">
+      Username is required
+    </div>
+    <div class="err" [hidden]="email.valid || email.untouched">
+      Email is invalid
+    </div>
+    <div class="err" [hidden]="password.valid || password.untouched">
+      Password must be between 4 and 16 symbols
+    </div>
+    <div
+      class="err"
+      [hidden]="
         repeatPassword.value === password.value ||
         repeatPassword.untouched ||
         repeatPassword.valid
-      ">
-            Both passwords must match
-        </div>
-
-        <div class="err" *ngIf="err1">{{ err1 }}</div>
+      "
+    >
+      Both passwords must match
     </div>
+
+    <div class="err" *ngIf="err1">{{ err1 }}</div>
+  </div>
 </div>

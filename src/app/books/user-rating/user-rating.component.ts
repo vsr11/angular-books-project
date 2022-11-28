@@ -22,7 +22,7 @@ export class UserRatingComponent implements OnInit {
     ngOnInit(): void {
       this.bookService.getAllVotesByBook(this.book1.id)
       .subscribe(d=>{
-          this.n++;
+          // this.n++;
           if(d[0].rating==5){this.arr1[0]++};
           if(d[0].rating==4){this.arr1[1]++};
           if(d[0].rating==3){this.arr1[2]++};
@@ -30,6 +30,7 @@ export class UserRatingComponent implements OnInit {
           if(d[0].rating==1){this.arr1[4]++};
 
           // this.r2 = Fun.averageRating(this.arr1)
+          this.r1=this.book1.count
           this.r2=this.book1.avg
   
     })}
