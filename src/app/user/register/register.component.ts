@@ -12,8 +12,8 @@ import { IUser } from 'src/app/shared/interfaces';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent  {
-model!:any;
-err1:any;
+  model!:any;
+  err1:any;
 
   constructor(private http: HttpClient,private router: Router) { 
     this.model={
@@ -21,7 +21,7 @@ err1:any;
       password: '',
       repeatPassword:'',
       name: '',
-      role: '',
+      role: 'user',
       id: 0
     
   }

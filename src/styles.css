@@ -83,6 +83,25 @@ input:focus {
     background: transparent;
 }
 
+.button {
+    color: #f3712e;
+    font-weight: bold;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-style: oblique;
+}
+
+a:hover {
+    color: #f3712e;
+}
+
+.active {
+    color: #f3712e;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {

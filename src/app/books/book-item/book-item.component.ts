@@ -12,37 +12,43 @@ import { BooksService } from '../books.service';
 })
 export class BookItemComponent implements OnInit {
   constructor(
-     private authService: AuthService,
-     
-      private bookService: BooksService){}
-  
+     private authService: AuthService,     
+      private bookService: BooksService)
+      {}
+
   @Input() book!: IBook;
   
-  get isAuth(){return this.authService.isAuth}
-    readBook: boolean = false;
+  get isAuth(){
+    return this.authService.isAuth;
+  }
+
+  readBook: boolean = false;
   readList: string[] = []
-  @Input() disabled!: boolean;
   user: any;
+  @Input() disabled!: boolean;
   
   ngOnInit(): void {
-   
-  this.bookService.getOneVote(this.authService.getAuth()?.data.user.id, this.book.id)
+    // console.log(this.authService.getAuth().data);
+    this.user = this.authService.getAuth()?.data.user;
+  this.bookService.getOneVote(this.user?.id,
+   this.book.id)
   .subscribe((d: any) => {
     this.readBook = d.length > 0;
+    
   });
 };
 
 onReadHendler(){
-     
     if(this.readBook){
       return;
     }
-  
+
   this.bookService.addVote({
     user_id: this.user.id,
     book_id: this.book.id,
     rating: 0,
     review: ''
-  }).subscribe();
+  })
+  .subscribe(()=>{this.readBook = true;});
 }
 }

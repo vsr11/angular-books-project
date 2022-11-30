@@ -12,30 +12,13 @@
 
 .title {
     width: 50rem;
-}
-
-.stars {
-    width: 10rem;
-}
-
-.buttons {
-
-    width: 15rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
 }
 
 h1 {
     text-align: center;
     margin-top: 2rem;
     font-size: 2rem;
-}
-
-.title h1 {
-    font-size: 1.8rem;
-}
-
-form {
-    width: 25rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }

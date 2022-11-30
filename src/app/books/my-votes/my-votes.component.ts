@@ -1,9 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { count } from 'console';
-import { reduce } from 'rxjs';
-import { IBook } from 'src/app/shared/interfaces';
-import { IVote } from 'src/app/shared/interfaces/vote';
 import { BooksService } from '../books.service';
 
 @Component({
@@ -13,42 +9,34 @@ import { BooksService } from '../books.service';
 })
 
 export class MyVotesComponent implements OnInit {
+  @Input() vote:any;
 
-  title: any;
-  myvote: any;
+  vote1: any;
   model: any;
   data2: any;
   newRating: number | undefined;
   count1:number = 0;
-  avg1:number = 0;
-  bookTitle: any;
-  bookImg: any;
+  avg1:number = 0;   
+  voted:boolean = false
 
   redirect = this.router1.snapshot.queryParams['redirect'] || '/';
   
-  constructor(private router1: ActivatedRoute, 
+  constructor( private router1: ActivatedRoute, 
     private bookService: BooksService,
-    private router2: Router) {
-
+    private router2: Router) {    
       this.model = {
-        review:''
+        review:'',
+        rating:0
       }
     }
-    
+   
     ngOnInit(): void {
-      let p = this.router1.snapshot.params['voteId'];
-
-      this.bookService.getOneVoteById(p)
-      .subscribe((d: any) => {
-        this.myvote = d[0];
-        // console.log('zzz', this.myvote)
-        this.model.review = this.myvote.review;
-
-        this.bookService.getOneBook(this.myvote.book_id)
-        .subscribe((d: IBook)=>{
-        this.bookTitle = d.title;
-        this.bookImg = d.img;
-        });
+      
+      this.bookService.getOneVoteById(this.vote.id)
+      .subscribe((d:any) => {
+        this.vote1 = d[0];       
+        this.model.review = this.vote1.review;
+        this.model.rating = this.vote1.rating;
     });
   }
 
@@ -57,15 +45,17 @@ export class MyVotesComponent implements OnInit {
   };
   
   saveRew(){
-    this.bookService.updateVote(this.myvote.id,
+    this.bookService.updateVote(this.vote.id,
       {
         rating: this.newRating, 
-        review: this.model.review })
+        review: this.model.review
+      })
         .subscribe(()=>{
-          this.router2.navigate([this.redirect]);
-   });
+          this.router2.navigate(['/books/my-books'])
+          this.voted = true;
+        });
 
-    this.bookService.getOneBook(this.myvote.book_id)
+    this.bookService.getOneBook(this.vote.book_id)
     .subscribe(d => {
       this.count1 = d.count;
       this.avg1 = d.avg; 
@@ -73,9 +63,11 @@ export class MyVotesComponent implements OnInit {
         avg: (this.avg1 * this.count1 + this.newRating!)/(this.count1+1),
         count: this.count1 + 1
       };
-      this.bookService.updateBook(this.myvote.book_id, this.data2).subscribe();
-  })
+      this.bookService.updateBook(this.vote.book_id, this.data2)
+      .subscribe(()=>{this.router2.navigate(['/books/my-books'])});
+  }
+    )
 }
 
-  exit(){ this.router2.navigate([this.redirect])}
+  // exit(){ this.router2.navigate([this.redirect])}
 }

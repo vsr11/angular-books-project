@@ -93,3 +93,23 @@
     border-radius: 20px;
     height: 100%;
 }
+
+.rev {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10rem;
+    border-bottom: 1px solid;
+}
+
+.rev>div:first-of-type {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    white-space: pre-line;
+}

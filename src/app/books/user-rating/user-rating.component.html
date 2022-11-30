@@ -12,11 +12,22 @@
           <div
             *ngIf="r1"
             class="bar"
-            [style.width]="(arr1[5 - x] * 100) / r1 + '%'"
+            [style.width]="(arr1[x - 1] * 100) / r1 + '%'"
           ></div>
         </div>
-        <div>{{ arr1[5 - x] }}</div>
+        <div>{{ arr1[x - 1] }}</div>
       </div>
     </ng-container>
+  </div>
+</div>
+<div class="rev" *ngFor="let rev of arr2">
+  <div>{{ rev.user }}</div>
+  <div class="user">
+    <ng-rating-bar
+      [rating]="rev.r2"
+      [disabled]="true"
+      size="22px"
+    ></ng-rating-bar>
+    <div>{{ rev.review }}</div>
   </div>
 </div>

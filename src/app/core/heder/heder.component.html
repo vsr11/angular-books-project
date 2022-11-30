@@ -1,30 +1,35 @@
 <div id="header">
-    <nav>
-        <ul>
-            <li>
-                <a routerLink='/books/books-list' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    BOOKS</a>
-            </li>
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="/books/books-list"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          BOOKS</a
+        >
+      </li>
 
-            <li *ngIf="isAuth">
-                <a routerLink='/books/my-books' routerLinkActive="active">MY BOOKS</a>
-            </li>
+      <li *ngIf="isAuth">
+        <a routerLink="/books/my-books" routerLinkActive="active">MY BOOKS</a>
+      </li>
 
-            <ul *ngIf="!isAuth">
-                <li>
-                    <a routerLink="/login" routerLinkActive="active">Login</a>
-                </li>
-                <li>
-                    <a routerLink="/register" routerLinkActive="active">Register</a>
-                </li>
-            </ul>
+      <ul *ngIf="!isAuth">
+        <li>
+          <a routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li>
+          <a routerLink="/register" routerLinkActive="active">Register</a>
+        </li>
+      </ul>
 
-            <ul *ngIf="isAuth">
-                <li>Welcome, {{auth.getAuth()?.data.user.name}}!</li>
-                <li>
-                    <a routerLink="/" (click)="logout()">Logout</a>
-                </li>
-            </ul>
-        </ul>
-    </nav>
+      <ul *ngIf="isAuth">
+        <li>Welcome, {{ auth.getAuth()?.data.user.name }}!</li>
+        <li>
+          <a routerLink="/" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </ul>
+  </nav>
 </div>

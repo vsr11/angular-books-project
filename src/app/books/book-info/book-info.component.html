@@ -1,80 +1,95 @@
 <div class="book-info-site">
-    <div class="book-view">
-        <div class="gallery-box">
-            <img src={{book?.img}} alt="" />
-        </div>
+  <div class="book-view">
+    <div class="gallery-box">
+      <img src="{{ book?.img }}" alt="" />
+    </div>
 
-        <div class="book-info">
-            <div class="book-info-title">{{book?.title}}</div>
-            <div class="book-info-author">
-                {{book?.authors}}
+    <div class="book-info">
+      <div class="book-info-title">{{ book?.title }}</div>
+      <div class="book-info-author">
+        {{ book?.authors }}
+      </div>
+      <button *ngIf="isAdmin">
+        <a routerLink="/" routerLinkActive="active">ADD BOOK</a>
+      </button>
+      <button *ngIf="isAdmin">
+        <a [routerLink]="['/books/edit/', book?.id]" routerLinkActive="active"
+          >EDIT</a
+        >
+      </button>
+    </div>
+  </div>
+  <div class="book-description">
+    <h1>DESCRIPTION</h1>
+    <p>{{ book?.description }}</p>
+  </div>
+
+  <div class="bibliography">
+    <h1>Bibliographic information</h1>
+    <table>
+      <tbody>
+        <tr>
+          <td>Title</td>
+          <td>{{ book?.title }}</td>
+        </tr>
+        <tr>
+          <td>Authors</td>
+          <td>
+            <!-- {{book.authors?.map((x) => <div>{{x}}</div>}} -->
+            {{ book?.authors?.join(", ") }}
+          </td>
+        </tr>
+        <!-- {{book?.categories && ( -->
+        <tr>
+          <td>Categories</td>
+          <td>
+            <div *ngFor="let cat of book?.categories">
+              <a
+                routerLinkActive="active"
+                routerLink="/books/books-list"
+                [queryParams]="{ category: cat }"
+                queryParamsHandling="merge"
+                >{{ cat }}</a
+              >
             </div>
-        </div>
-    </div>
-    <div class="book-description">
-        <h1>DESCRIPTION</h1>
-        <p>{{book?.description}}</p>
-    </div>
-    <button><a [routerLink]="['/books/edit/', book?.id]">EDIT</a></button>
-
-
-    <div class="bibliography">
-        <h1>Bibliographic information</h1>
-        <table>
-            <tbody>
-                <tr>
-                    <td>Title</td>
-                    <td>{{book?.title}}</td>
-                </tr>
-                <tr>
-                    <td>Authors</td>
-                    <td>
-                        <!-- {{book.authors?.map((x) => <div>{{x}}</div>}} -->
-                        {{book?.authors?.join(', ')}}
-                    </td>
-                </tr>
-                <!-- {{book?.categories && ( -->
-                <tr>
-                    <td>Categories</td>
-                    <td>
-                        <!-- {{book?.categories?.map((x) => {{x}})}} -->
-                        {{book?.categories?.join(', ')}}
-                    </td>
-                </tr>
-                <!-- )}} -->
-                <!-- {{book?.publisher && ( -->
-                <tr>
-                    <td>Publisher</td>
-                    <td>{{book?.publisher}}</td>
-                </tr>
-                <!-- )}} -->
-                <!-- {{book?.publishedDate && ( -->
-                <tr>
-                    <td>Published date</td>
-                    <td>{{book?.publishedDate}}</td>
-                </tr>
-                <!-- )}} -->
-                <!-- {{book.pageCount && ( -->
-                <tr>
-                    <td>Length</td>
-                    <td>{{book?.pageCount}}</td>
-                </tr>
-                <!-- )}} -->
-                <!-- {{book?.language && ( -->
-                <tr>
-                    <td>Language</td>
-                    <td>{{book?.language}}</td>
-                </tr>
-                <!-- )}} -->
-                <tr>
-                    <td>ISBN</td>
-                    <td>{{book?.isbn}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div>
-        <h1>User ratings</h1>
-        <app-user-rating [book1]="book" *ngIf="book"></app-user-rating>
-    </div>
+            <!-- {{book?.categories?.map((x) => {{x}})}} -->
+            <!-- {{ book?.categories?.join(", ") }} -->
+          </td>
+        </tr>
+        <!-- )}} -->
+        <!-- {{book?.publisher && ( -->
+        <tr>
+          <td>Publisher</td>
+          <td>{{ book?.publisher }}</td>
+        </tr>
+        <!-- )}} -->
+        <!-- {{book?.publishedDate && ( -->
+        <tr>
+          <td>Published date</td>
+          <td>{{ book?.publishedDate }}</td>
+        </tr>
+        <!-- )}} -->
+        <!-- {{book.pageCount && ( -->
+        <tr>
+          <td>Length</td>
+          <td>{{ book?.pageCount }}</td>
+        </tr>
+        <!-- )}} -->
+        <!-- {{book?.language && ( -->
+        <tr>
+          <td>Language</td>
+          <td>{{ book?.language }}</td>
+        </tr>
+        <!-- )}} -->
+        <tr>
+          <td>ISBN</td>
+          <td>{{ book?.isbn }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h1>User ratings</h1>
+    <app-user-rating [book1]="book" *ngIf="book"></app-user-rating>
+  </div>
 </div>

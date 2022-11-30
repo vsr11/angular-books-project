@@ -127,7 +127,13 @@ tr td:last-child {
     white-space: pre-line;
 }
 
-.user-rating-list button {
+/* .user-rating-list button {
     border: none;
     background-color: transparent;
-}
+} */
+
+/* .button {
+    display: flex;
+    justify-content: space-between;
+
+} */

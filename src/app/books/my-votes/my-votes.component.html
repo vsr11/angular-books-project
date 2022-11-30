@@ -1,22 +1,24 @@
 <div class="myvote">
-  <!-- <ng-rating-bar *ngIf="myvote" [rating]="myvote.rating" (ratingChanged)="onRatingChanged($event)" size="22px">
-    </ng-rating-bar> -->
-
-  <div>{{ bookTitle }}</div>
-  <img src="{{ bookImg }}" alt="bookTitle" />
+  <ng-rating-bar
+    class="stars"
+    [rating]="vote.rating"
+    (ratingChanged)="onRatingChanged($event)"
+    size="22px"
+    [disabled]="!!vote.rating || voted"
+  ></ng-rating-bar>
   <form #voteForum="ngForm" (ngSubmit)="saveRew()">
     <textarea
       name="review"
       id="review"
       [(ngModel)]="model.review"
       #review="ngModel"
-      cols="30"
-      rows="10"
+      cols="20"
+      rows="2"
     >
     </textarea>
-    <div class="buttons">
-      <input type="submit" value="Save" />
-      <input type="button" (click)="exit()" value="Exit" />
-    </div>
+    <!-- <div class="buttons"> -->
+    <input type="submit" value="Save" />
+    <!-- <input type="button" (click)="exit()" value="Exit" /> -->
+    <!-- </div> -->
   </form>
 </div>
