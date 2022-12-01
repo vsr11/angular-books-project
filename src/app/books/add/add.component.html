@@ -1,38 +1,59 @@
 <div class="addbook">
-    <form class="find-form" #findForm="ngForm" (ngSubmit)="findbook()">
-        <fieldset>
-            <legend>SEARCH BOOK IN GOOGLE BOOKS</legend>
-            <label htmlFor="isbn">Enter isbn:</label>
-            <input required id="isbn" type="text" name="isbn" [(ngModel)]="model.isbn" #isbn="ngModel" required />
-            <input type="submit" value="Find book" />
-        </fieldset>
-    </form>
+  <form class="find-form" #findForm="ngForm" (ngSubmit)="findbook()">
+    <fieldset>
+      <legend>SEARCH BOOK IN GOOGLE BOOKS</legend>
+      <label htmlFor="isbn">Enter isbn:</label>
+      <input
+        required
+        id="isbn"
+        type="text"
+        name="isbn"
+        [(ngModel)]="model.isbn"
+        #isbn="ngModel"
+        required
+      />
+      <input type="submit" value="Find book" />
+    </fieldset>
+  </form>
 
-    <h1 *ngIf="isbn.touched && (!onebook?.id || isbn.invalid) " class="err">ISBN
-        not found</h1>
-    {{!!onebook?.id}}
-    {{sb}}
-
-    <!-- {{sb()}} -->
-    <!-- <h1 *ngIf="onebook && sb">Book already in database!</h1> -->
-
-    <!-- <div *ngIf="!sb && onebook?.id">
-        <h1>{{onebook?.title}}</h1>
+  <div *ngIf="isbn.touched">
+    <h1 *ngIf="!onebook?.id || isbn.invalid" class="err">ISBN not found</h1>
+    <div *ngIf="onebook?.id">
+      <h1 *ngIf="flag">Book already in database!</h1>
+      <div *ngIf="!flag">
+        <h1>{{ onebook?.title }}</h1>
         <form class="add-form" #addForm="ngForm" (ngSubmit)="savebook()">
-            <h4>CATEGORIES</h4>
-            <ul class="categories">
-                <li *ngFor="let item of list">
-                    <input type="checkbox" [(ngModel)]="item.checked"
-                        [ngModelOptions]="{standalone: true}">{{item.title}}
-                </li>
-            </ul>
-            <input type="submit" value="Add book" />
+          <h4>CATEGORIES</h4>
+          <ul class="categories">
+            <li *ngFor="let item of list">
+              <input
+                type="checkbox"
+                [(ngModel)]="item.checked"
+                [ngModelOptions]="{ standalone: true }"
+              />{{ item.title }}
+            </li>
+          </ul>
+          <input type="submit" value="Add book" />
         </form>
-        <button type="button">
-            <a href="">Find another book</a>
+      </div>
+      <input
+        type="button"
+        (click)="findForm.reset()"
+        value="Find another book"
+      />
+      <input type="button" (click)="exitBtn()" value="Exit" />
+    </div>
 
-        </button>
-        <input type="button" (click)="exitBtn()" value="Exit" />
-
-    </div> -->
+    <!-- {{ !!onebook?.id }}
+      {{ flag }} -->
+    <!-- {{ sb() }} -->
+  </div>
 </div>
+<!-- <h1 *ngIf="isbn.touched && (!onebook?.id || isbn.invalid)" class="err">
+    ISBN not found
+  </h1>
+  {{ !!onebook?.id }}
+  {{ sb }} -->
+
+<!-- {{sb()}} -->
+<!-- <h1 *ngIf="onebook && sb">Book already in database!</h1> -->

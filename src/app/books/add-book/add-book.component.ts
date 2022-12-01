@@ -1,4 +1,3 @@
-// import { NgForOf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { catArr } from 'src/app/shared/categories';
@@ -47,7 +46,7 @@ export class AddBookComponent implements OnInit {
 
 FindBookDB (){
   this.booksService.getOneBook(this.onebook?.id!)
-  .subscribe(data=>this.findbook=data)
+  ?.subscribe(data=>this.findbook=data)
 }
 
   AddBookHandle(e: any){

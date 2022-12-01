@@ -10,85 +10,79 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  styleUrls: ['./add.component.css'],
 })
 export class AddComponent implements OnInit {
-  res=true;
-  model!:any;
+  res = true;
+  model!: any;
   // onebook1:any;
-  onebook:IBook|undefined;
-  book1:IBook|undefined;
-  categories:any[] = [];
-  checked:boolean = false;
-  list:any[]=[]
+  onebook: IBook | undefined;
+  book1: IBook | undefined;
+  categories: any[] = [];
+  checked: boolean = false;
+  list: any[] = [];
   filterList: any | undefined;
   checks: string[] = [];
-  err1:any;
-  flag:boolean=false
+  err1: any;
+  flag: boolean = false;
 
-  constructor( private router: Router,private booksService: BooksService ) { 
-    this.model={isbn : ''};
-  
+  constructor(private router: Router, private booksService: BooksService) {
+    this.model = { isbn: '' };
   }
 
   ngOnInit(): void {
-    catArr.map((x) => this.list.push({
-      title: x, 
-      checked: false })
-      );
-      };
-      // this.categories = catArr.map(x=>{{name:x, this.checked: false}})
- 
-    findbook(){
-      console.log(this.model.isbn);
-    
-      this.booksService.getByIsbn(this.model.isbn)
-      .subscribe((data:any) => {
-      let isbn = this.model.isbn;   
-      
+    catArr.map((x) =>
+      this.list.push({
+        title: x,
+        checked: false,
+      })
+    );
+  }
+
+  findbook() {
+    if(this.model.isbn == ''){
+      return;
+    }
+
+    this.booksService.getByIsbn(this.model.isbn).subscribe((data: any) => {
+      let isbn = this.model.isbn;
+
       this.onebook = Fun.extactBookData(data, { isbn });
-      console.log('!!!', this.onebook);
-      
-      }
-      )
-    }
-      
+      // console.log('!!!', this.onebook);
+      this.sb();
+    });
+  }
 
-     get sb(){
-      if(!!this.onebook?.id){this.booksService.getOneBook(this.onebook?.id!)
-        .subscribe(data=>this.book1=data)
-        console.log(this.book1?.id);
-              }  
-              return !!this.book1?.id     
-    }
+  sb() {
+    this.booksService.getOneBook(this.onebook!.id).subscribe((data) => {
+      this.flag = !!data.id;
+    });
+  }
 
-      
-    savebook(){
-      
-      this.filterList = this.list.filter((item: { checked: any }) => item.checked);
+  savebook() {
+    this.filterList = this.list.filter(
+      (item: { checked: any }) => item.checked
+    );
     this.filterList.map((x: any) => {
       if (!this.checks.includes(x.title)) {
         this.checks.push(x.title);
-      // this.onebook?.categories.concat(this.checks)
-        this.onebook!.categories=this.checks
-      this.booksService.addBook(this.onebook)
-        .subscribe(()=>{
-    this.router.navigate(['/'])
-  },
-  (e)=>{this.err1=e.error}
-  );
-      
-      
-    }})}
-    exitBtn(){
-      this.router.navigate(['/books']);
-    }
+        // this.onebook?.categories.concat(this.checks)
+      }
+    });
+    this.onebook!.categories = this.checks;
+    this.booksService.addBook(this.onebook).subscribe(
+      () => {
+        this.router.navigate(['/']);
+      },
+      (e) => {
+        this.err1 = e.error;
+      }
+    );
   }
-  
+  exitBtn() {
+    this.router.navigate(['/']);
+  }
+}
 
-
-  // this.booksService.getOneBook(this.onebook?.id!)
-  // .subscribe(data=>this.book1=data)
-  
-
-
+// this.booksService.getOneBook(this.onebook?.id!)
+// .subscribe(data=>this.book1=data)

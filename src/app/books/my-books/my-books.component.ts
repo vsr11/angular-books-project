@@ -25,7 +25,7 @@ this.bookService.getAllVotesByUser(this.auth.getAuth()?.data.user.id)
 .subscribe((d:any)=>{
  this.list=d;   
    for(let i in d){
-  this.bookService.getOneBook(d[i].book_id).subscribe((d1)=>{
+  this.bookService.getOneBook(d[i].book_id)?.subscribe((d1)=>{
     this.list[i].title = d1.title;
        this.list[i].img = d1.img;
      })}

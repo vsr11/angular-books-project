@@ -1,31 +1,46 @@
 <div class="edit">
-    <form #editForum="ngForm" (ngSubmit)="edit()">
-        <h2>{{onebook?.title}}</h2>
-        <img src={{onebook?.img}} alt="" />
-        <div>
-            <label for="img">Image:</label>
-            <input type="text" name="img" [(ngModel)]="model.img" #img="ngModel" required />
-        </div>
-        <h4>CATEGORIES</h4>
-        <ul class="categories">
-            <li *ngFor="let item of list">
-                <input type="checkbox" [(ngModel)]="item.checked" [ngModelOptions]="{standalone: true}">{{item.title }}
-            </li>
-        </ul>
+  <form #editForum="ngForm" (ngSubmit)="edit()">
+    <h2>{{ onebook?.title }}</h2>
+    <img src="{{ onebook?.img }}" alt="" />
+    <div>
+      <label for="img">Image:</label>
+      <input
+        type="text"
+        name="img"
+        [(ngModel)]="model.img"
+        #img="ngModel"
+        required
+      />
+    </div>
+    <h4>CATEGORIES</h4>
+    <ul class="categories">
+      <li *ngFor="let item of list">
+        <input
+          type="checkbox"
+          [(ngModel)]="item.checked"
+          [ngModelOptions]="{ standalone: true }"
+        />{{ item.title }}
+      </li>
+    </ul>
 
-        <div class="description">
-            <label for="text">
-                <h4>DESCRIPTION</h4>
-            </label>
-            <br />
-            <textarea name="description" id="text" cols="30" rows="10" [(ngModel)]="model.description"
-                #description="ngModel"></textarea>
-        </div>
+    <div class="description">
+      <label for="text">
+        <h4>DESCRIPTION</h4>
+      </label>
+      <br />
+      <textarea
+        name="description"
+        id="text"
+        cols="30"
+        rows="10"
+        [(ngModel)]="model.description"
+        #description="ngModel"
+      ></textarea>
+    </div>
 
-        <div>
-            <input type="submit" value="Edit book" />
-            <input type="button" value="Delete book" (click)="del(onebook!.id)">
-            <input type="button" (click)="exitBtn()" value="Exit" />
-        </div>
-    </form>
+    <div>
+      <input type="submit" value="Edit book" />
+      <input type="button" (click)="exitBtn()" value="Exit" />
+    </div>
+  </form>
 </div>

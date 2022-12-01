@@ -1,4 +1,5 @@
-<h1>My votes</h1>
+<!-- <div *ngIf="list"> -->
+<h1 *ngIf="list?.length > 0">My votes</h1>
 <div class="mybooks" *ngFor="let vote of list">
   <div class="img">
     <img src="{{ vote?.img }}" alt="" />
@@ -14,3 +15,4 @@
     <app-my-votes [vote]="vote"></app-my-votes>
   </div>
 </div>
+<!-- </div> -->

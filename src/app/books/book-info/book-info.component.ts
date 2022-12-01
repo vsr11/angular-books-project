@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IBook } from 'src/app/shared/interfaces';
 import { AuthService } from 'src/app/user/auth.service';
 import { BooksService } from '../books.service';
@@ -16,6 +16,7 @@ export class BookInfoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private bookService: BooksService,
     private authService: AuthService
   ) { }
@@ -24,7 +25,11 @@ export class BookInfoComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
     this.book = undefined;
-    this.bookService.getOneBook(this.id!).subscribe(book => this.book = book)
+    this.bookService.getOneBook(this.id!)?.subscribe(book => this.book = book)
     this.isAdmin = this.authService.isAdmin;
+  }
+
+  del(bookId: string){    
+    this.bookService.del(bookId).subscribe(()=>this.router.navigate(['/']));
   }
 }

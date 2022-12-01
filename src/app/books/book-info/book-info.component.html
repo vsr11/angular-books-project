@@ -10,13 +10,11 @@
         {{ book?.authors }}
       </div>
       <button *ngIf="isAdmin">
-        <a routerLink="/" routerLinkActive="active">ADD BOOK</a>
-      </button>
-      <button *ngIf="isAdmin">
         <a [routerLink]="['/books/edit/', book?.id]" routerLinkActive="active"
-          >EDIT</a
+          >Edit</a
         >
       </button>
+      <input type="button" value="Delete book" (click)="del(book!.id)" />
     </div>
   </div>
   <div class="book-description">

@@ -1,5 +1,5 @@
 import { IBook } from '../shared/interfaces';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
@@ -16,7 +16,10 @@ getAllBooks(cat = '', sort = ''){
 }
 
 getOneBook(id: string){
-  return this.http.get<IBook>('http://localhost:5000/books/' + id)
+  // if(!id){
+  //   return;
+  // }
+  return this.http.get<IBook>('http://localhost:5000/books/' + id);
 }
 
   getByIsbn (isbn: number) {

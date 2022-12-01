@@ -40,7 +40,7 @@ export class EditBookComponent implements OnInit {
   id = this.route.snapshot.params['id'];
 
   ngOnInit() {
-    this.bookService.getOneBook(this.id).subscribe((d) => {
+    this.bookService.getOneBook(this.id)?.subscribe((d) => {
       this.onebook = d;
       this.model.img = this.onebook.img;
       this.model.description = this.onebook.description;

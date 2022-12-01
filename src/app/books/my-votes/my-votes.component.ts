@@ -56,7 +56,7 @@ export class MyVotesComponent implements OnInit {
         });
 
     this.bookService.getOneBook(this.vote.book_id)
-    .subscribe(d => {
+    ?.subscribe(d => {
       this.count1 = d.count;
       this.avg1 = d.avg; 
       this.data2 = {      
