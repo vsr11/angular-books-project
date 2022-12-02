@@ -64,8 +64,8 @@ export class EditBookComponent implements OnInit {
     .subscribe(()=>this.router.navigate(['/books', 'book-info', this.id]));
   }
 
-  del(bookId: string){    
-    this.bookService.del(bookId).subscribe(()=>this.router.navigate(['/']));
+  delBook(bookId: string){    
+    this.bookService.delBook(bookId).subscribe(()=>this.router.navigate(['/']));
   }
 
   exitBtn(){

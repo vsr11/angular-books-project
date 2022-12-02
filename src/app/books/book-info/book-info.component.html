@@ -9,12 +9,19 @@
       <div class="book-info-author">
         {{ book?.authors }}
       </div>
-      <button *ngIf="isAdmin">
-        <a [routerLink]="['/books/edit/', book?.id]" routerLinkActive="active"
-          >Edit</a
-        >
-      </button>
-      <input type="button" value="Delete book" (click)="del(book!.id)" />
+      <input
+        *ngIf="isAdmin"
+        type="button"
+        [routerLink]="['/books/edit/', book?.id]"
+        routerLinkActive="active"
+        value="Edit book"
+      />
+      <input
+        *ngIf="isAdmin"
+        type="button"
+        value="Delete book"
+        (click)="delBook(book!.id)"
+      />
     </div>
   </div>
   <div class="book-description">
@@ -70,7 +77,7 @@
         <!-- {{book.pageCount && ( -->
         <tr>
           <td>Length</td>
-          <td>{{ book?.pageCount }}</td>
+          <td>{{ book?.pageCount }} pages</td>
         </tr>
         <!-- )}} -->
         <!-- {{book?.language && ( -->
@@ -87,7 +94,6 @@
     </table>
   </div>
   <div>
-    <h1>User ratings</h1>
     <app-user-rating [book1]="book" *ngIf="book"></app-user-rating>
   </div>
 </div>

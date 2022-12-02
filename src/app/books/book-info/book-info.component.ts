@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IBook } from 'src/app/shared/interfaces';
+import { IVote } from 'src/app/shared/interfaces/vote';
 import { AuthService } from 'src/app/user/auth.service';
 import { BooksService } from '../books.service';
 @Component({
@@ -13,6 +14,7 @@ export class BookInfoComponent implements OnInit {
   book1: IBook | undefined;
   id: string | undefined;
   isAdmin: boolean | undefined;
+  arr:IVote[]=[]
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,7 +31,15 @@ export class BookInfoComponent implements OnInit {
     this.isAdmin = this.authService.isAdmin;
   }
 
-  del(bookId: string){    
-    this.bookService.del(bookId).subscribe(()=>this.router.navigate(['/']));
+  delBook(bookId: string){
+    this.bookService.getAllVotesByBook(bookId).subscribe((d)=>{
+      d.map((x:any)=>{
+        this.bookService.delVote(x.id).subscribe()
+      })
+    })
+    
+    this.bookService.delBook(bookId).subscribe(()=>{
+      this.router.navigate(['/']);
+    });
   }
 }

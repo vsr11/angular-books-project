@@ -1,6 +1,7 @@
+<h1>User Ratings</h1>
 <div class="user-rating">
   <div class="user-rating-left">
-    <div>{{ r2 }}</div>
+    <div>{{ r2.toFixed(2) }}</div>
     <div>{{ r1 }} votes</div>
     <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
   </div>
@@ -20,6 +21,7 @@
     </ng-container>
   </div>
 </div>
+<h1>User Reviews</h1>
 <div class="rev" *ngFor="let rev of arr2">
   <div>{{ rev.user }}</div>
   <div class="user">

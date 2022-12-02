@@ -16,13 +16,13 @@
     </fieldset>
   </form>
 
-  <div *ngIf="isbn.touched">
-    <h1 *ngIf="!onebook?.id || isbn.invalid" class="err">ISBN not found</h1>
+  <div *ngIf="isbn.touched" class="add-form">
+    <h1 *ngIf="!onebook?.id || !isbn.touched" class="err">ISBN not found</h1>
     <div *ngIf="onebook?.id">
       <h1 *ngIf="flag">Book already in database!</h1>
       <div *ngIf="!flag">
         <h1>{{ onebook?.title }}</h1>
-        <form class="add-form" #addForm="ngForm" (ngSubmit)="savebook()">
+        <form #addForm="ngForm" (ngSubmit)="savebook()">
           <h4>CATEGORIES</h4>
           <ul class="categories">
             <li *ngFor="let item of list">
@@ -36,24 +36,8 @@
           <input type="submit" value="Add book" />
         </form>
       </div>
-      <input
-        type="button"
-        (click)="findForm.reset()"
-        value="Find another book"
-      />
-      <input type="button" (click)="exitBtn()" value="Exit" />
     </div>
-
-    <!-- {{ !!onebook?.id }}
-      {{ flag }} -->
-    <!-- {{ sb() }} -->
+    <input type="button" (click)="findForm.reset()" value="Find another book" />
+    <input type="button" (click)="exitBtn()" value="Exit" />
   </div>
 </div>
-<!-- <h1 *ngIf="isbn.touched && (!onebook?.id || isbn.invalid)" class="err">
-    ISBN not found
-  </h1>
-  {{ !!onebook?.id }}
-  {{ sb }} -->
-
-<!-- {{sb()}} -->
-<!-- <h1 *ngIf="onebook && sb">Book already in database!</h1> -->

@@ -3,9 +3,7 @@ import { catArr } from 'src/app/shared/categories';
 import { Fun } from 'src/app/shared/fun';
 import { IBook } from 'src/app/shared/interfaces';
 import { BooksService } from '../books.service';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -15,7 +13,6 @@ import { NgForm } from '@angular/forms';
 export class AddComponent implements OnInit {
   res = true;
   model!: any;
-  // onebook1:any;
   onebook: IBook | undefined;
   book1: IBook | undefined;
   categories: any[] = [];
@@ -48,12 +45,11 @@ export class AddComponent implements OnInit {
       let isbn = this.model.isbn;
 
       this.onebook = Fun.extactBookData(data, { isbn });
-      // console.log('!!!', this.onebook);
-      this.sb();
+      this.searchbook();
     });
   }
 
-  sb() {
+  searchbook() {
     this.booksService.getOneBook(this.onebook!.id).subscribe((data) => {
       this.flag = !!data.id;
     });
@@ -66,7 +62,6 @@ export class AddComponent implements OnInit {
     this.filterList.map((x: any) => {
       if (!this.checks.includes(x.title)) {
         this.checks.push(x.title);
-        // this.onebook?.categories.concat(this.checks)
       }
     });
     this.onebook!.categories = this.checks;
@@ -83,6 +78,3 @@ export class AddComponent implements OnInit {
     this.router.navigate(['/']);
   }
 }
-
-// this.booksService.getOneBook(this.onebook?.id!)
-// .subscribe(data=>this.book1=data)

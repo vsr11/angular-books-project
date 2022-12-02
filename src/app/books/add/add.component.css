@@ -4,44 +4,44 @@
     text-align: center;
 }
 
-.addbook input {
+/* input {
     margin: 0 2rem;
     background-color: transparent;
     border: 1px solid;
     border-radius: 5px;
 }
 
-.addbook .add-form input {
+.add-form input {
     margin-top: 2rem;
 }
 
-.addbook input:focus,
-.addbook input:hover {
+input:focus,
+input:hover {
     background-color: rgba(246, 237, 237);
-}
+} */
 
-.addbook form {
+form {
     margin: 3rem;
 }
 
-.addbook .find-form {
+.find-form {
     padding: 5rem 0;
 }
 
-form fieldset,
-form legend {
+fieldset,
+legend {
     background: #f9f9f9;
 }
 
-form fieldset {
-    width: 50%;
+fieldset {
+    width: 100%;
     padding: 2.5em 2em 2em 2em;
     position: relative;
     border: 2px solid;
     margin: auto;
 }
 
-form legend {
+legend {
     padding: 0.5rem 1rem;
     left: 50%;
     top: -1.4rem;
@@ -50,43 +50,59 @@ form legend {
     border: 3px solid;
 }
 
-.addbook .categories {
+.categories {
     display: flex;
-    width: 100%;
+    width: 60%;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: auto;
 }
 
-fieldset {
-    width: 100%;
+ul {
+    list-style: none;
 }
 
-.addbook h1 {
+li {
+    width: 20%;
+    margin: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* fieldset {
+    width: 100%;
+} */
+.add-form {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 5rem;
+}
+
+h1 {
     width: 100%;
     color: red;
     margin-bottom: 3rem;
 }
 
-* .addbook .categories-item {
+*.categories-item {
     margin: 1rem;
     display: flex;
     justify-content: space-between;
     width: 130px;
 }
 
-.addbook .categories-item:hover {
+.categories-item:hover {
     background-color: rgba(246, 237, 237);
 }
 
-.addbook .categories input {
+.categories input {
     border: none;
     outline: none;
     background: transparent;
     margin: 0;
 }
 
-.addbook button {
+/* button {
     display: inline-block;
     outline: none;
     cursor: pointer;
@@ -101,8 +117,8 @@ fieldset {
     color: rgb(208, 70, 70);
 }
 
-.addbook button:hover,
-.addbook button:focus {
+button:hover,
+button:focus {
     color: #060;
     background: #fff;
-}
+} */

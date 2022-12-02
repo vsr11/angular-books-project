@@ -34,8 +34,12 @@ updateBook(bookId: string, data: IBook){
   return this.http.patch<IBook>('http://localhost:5000/books/' + bookId, data);
  }
 
- del(bookId: string){
+ delBook(bookId: string){
   return this.http.delete('http://localhost:5000/books/' + bookId);
+ }
+
+ delVote(voteId: number){
+  return this.http.delete('http://localhost:5000/votes/' + voteId);
  }
 
  addVote(data: IVote){
