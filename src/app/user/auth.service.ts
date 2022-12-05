@@ -8,9 +8,7 @@ export class AuthService {
 
   get isAuth(): boolean {
     let x:any = localStorage.getItem('userData');
-    // console.log(x);
     if(!x){return false;}
-    // return Boolean(JSON.parse(x.data.id));
     return true;
   }
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IBook, IUser } from 'src/app/shared/interfaces';
+import { IBook } from 'src/app/shared/interfaces';
 import { IVote } from 'src/app/shared/interfaces/vote';
 import { UserService } from 'src/app/user/user.service';
 import { BooksService } from '../books.service';

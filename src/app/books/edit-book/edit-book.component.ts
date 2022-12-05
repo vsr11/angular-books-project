@@ -1,10 +1,9 @@
-import {FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IBook } from 'src/app/shared/interfaces';
 import { BooksService } from '../books.service';
 import { catArr } from 'src/app/shared/categories';
-// import { Fun } from 'src/app/shared/fun';
 import './edit-book.component.css';
 
 @Component({
@@ -21,7 +20,6 @@ export class EditBookComponent implements OnInit {
     this.model = {
       img: '',
       description: '',
-      // list:[]
     };
   }
 

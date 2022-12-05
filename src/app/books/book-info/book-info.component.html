@@ -40,11 +40,9 @@
         <tr>
           <td>Authors</td>
           <td>
-            <!-- {{book.authors?.map((x) => <div>{{x}}</div>}} -->
             {{ book?.authors?.join(", ") }}
           </td>
         </tr>
-        <!-- {{book?.categories && ( -->
         <tr>
           <td>Categories</td>
           <td>
@@ -57,35 +55,24 @@
                 >{{ cat }}</a
               >
             </div>
-            <!-- {{book?.categories?.map((x) => {{x}})}} -->
-            <!-- {{ book?.categories?.join(", ") }} -->
           </td>
         </tr>
-        <!-- )}} -->
-        <!-- {{book?.publisher && ( -->
         <tr>
           <td>Publisher</td>
           <td>{{ book?.publisher }}</td>
         </tr>
-        <!-- )}} -->
-        <!-- {{book?.publishedDate && ( -->
         <tr>
           <td>Published date</td>
           <td>{{ book?.publishedDate }}</td>
         </tr>
-        <!-- )}} -->
-        <!-- {{book.pageCount && ( -->
         <tr>
           <td>Length</td>
           <td>{{ book?.pageCount }} pages</td>
         </tr>
-        <!-- )}} -->
-        <!-- {{book?.language && ( -->
         <tr>
           <td>Language</td>
           <td>{{ book?.language }}</td>
         </tr>
-        <!-- )}} -->
         <tr>
           <td>ISBN</td>
           <td>{{ book?.isbn }}</td>

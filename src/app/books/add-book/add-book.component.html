@@ -1,48 +1,49 @@
 <div class="addbook">
-    <form class="find-form" [formGroup]="externalSearch" (submit)="FindBookHandle()">
-        <fieldset>
-            <legend>SEARCH BOOK IN GOOGLE BOOKS</legend>
-            <label htmlFor="isbn">Enter isbn:</label>
-            <input required id="isbn" type="text" formControlName="isbn" />
-            <input type="submit" value="Find book" />
-        </fieldset>
-    </form>
+  <form
+    class="find-form"
+    [formGroup]="externalSearch"
+    (submit)="FindBookHandle()"
+  >
+    <fieldset>
+      <legend>SEARCH BOOK IN GOOGLE BOOKS</legend>
+      <label htmlFor="isbn">Enter isbn:</label>
+      <input required id="isbn" type="text" formControlName="isbn" />
+      <input type="submit" value="Find book" />
+    </fieldset>
+  </form>
 
-    <h1 *ngIf="externalSearch.touched && !onebook?.id" class="err">ISBN
-        not found</h1>
+  <h1 *ngIf="externalSearch.touched && !onebook?.id" class="err">
+    ISBN not found
+  </h1>
 
-    <h1 *ngIf="externalSearch.pristine && onebook?.id && findbook?.id" class="err">Book already in database!</h1>
-    <!-- <div style="margin-top: 30px">
-        <form [formGroup]="form" (ngSubmit)="submit()">
-          <div *ngFor="let cartoon of cartoonsData">
-            <input type="checkbox" (change)="onChange(cartoon.name, $event.target.checked)" />
-            {{ cartoon.name }}
-          </div>
-          <button>submit</button>
-        </form>
-        </div> -->
-    <form *ngIf="onebook" class="add-form" [formGroup]="cats" (click)="AddBookHandle($event)">
-        <h1>{{onebook!.title}}</h1>
+  <h1
+    *ngIf="externalSearch.pristine && onebook?.id && findbook?.id"
+    class="err"
+  >
+    Book already in database!
+  </h1>
 
-        <fieldset>
-            <legend>CATEGORIES</legend>
-            <div class="categories" *ngFor="let x of categories">
-                <div class="categories-item">
-                    <label>{{x}}</label>
-                    <input formControlName={{x}} type="checkbox" value={{x}} />
-                </div>
-                <!-- ); -->
-                <!-- })} -->
-            </div>
-        </fieldset>
+  <form
+    *ngIf="onebook"
+    class="add-form"
+    [formGroup]="cats"
+    (click)="AddBookHandle($event)"
+  >
+    <h1>{{ onebook!.title }}</h1>
 
-        <input type="submit" value="Add book" />
-    </form>
+    <fieldset>
+      <legend>CATEGORIES</legend>
+      <div class="categories" *ngFor="let x of categories">
+        <div class="categories-item">
+          <label>{{ x }}</label>
+          <input formControlName="{{ x }}" type="checkbox" value="{{ x }}" />
+        </div>
+      </div>
+    </fieldset>
 
-    <button type="button">
-        Find another book
-    </button>
-    <button type="button">
-        Exit
-    </button>
+    <input type="submit" value="Add book" />
+  </form>
+
+  <button type="button">Find another book</button>
+  <button type="button">Exit</button>
 </div>

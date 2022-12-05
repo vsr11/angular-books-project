@@ -1,11 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-// import { NgForm } from '@angular/forms';
-
-import { IUser } from 'src/app/shared/interfaces';
-
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

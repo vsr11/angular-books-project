@@ -28,37 +28,6 @@ form label {
     margin: 1rem 2rem;
 }
 
-/* input {
-    margin: 1rem 2rem;
-}
-
-input:hover {
-    background-color: aliceblue;
-}
-
-input:focus+.actions {
-    border-color: #090;
-}
-
-div:last-of-type input,
-button {
-
-    font-weight: bold;
-    border: 1px solid;
-    background-color: aliceblue;
-    border-color: rgb(208, 228, 246);
-    cursor: pointer;
-    padding: 0.2rem 2rem;
-}
-
-div:last-of-type input:hover,
-button:hover {
-
-    border: 1px solid;
-    background-color: rgb(196, 215, 231);
-    border-color: rgb(80, 93, 105);
-} */
-
 .allerr {
     min-width: 20rem;
 }

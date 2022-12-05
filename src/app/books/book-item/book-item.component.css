@@ -54,30 +54,3 @@
     transition: all 0.3s ease;
     transform: scale(1.1);
 }
-
-/* .button {
-    color: #f3712e;
-    font-weight: bold;
-} */
-
-/* .book-item button {
-    background-color: rgb(240, 207, 207);
-    padding: 0.3rem 2rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 14px;
-    opacity: 0.5;
-
-}
-
-.book-item button:hover {
-    background-color: rgb(246, 169, 169);
-    opacity: 1;
-}
-
-.book-item .button {
-    color: #f3712e;
-    font-size: 1.3rem;
-    font-weight: bold;
-} */

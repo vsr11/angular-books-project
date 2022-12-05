@@ -1,13 +1,17 @@
-<!-- {{this.catArr?.length}} -->
 <div class="aside">
   <div class="categories">
     <h2>CATEGORIES</h2>
 
     <div class="item-categories">
-
       <ul *ngFor="let cat of allCategoris">
-        <li><a routerLinkActive="active" routerLink="/books/books-list" [queryParams]="{ category: cat }"
-            queryParamsHandling="merge">{{cat}}</a>
+        <li>
+          <a
+            routerLinkActive="active"
+            routerLink="/books/books-list"
+            [queryParams]="{ category: cat }"
+            queryParamsHandling="merge"
+            >{{ cat }}</a
+          >
         </li>
       </ul>
     </div>
@@ -16,41 +20,25 @@
       <h2>RATING</h2>
       <ul>
         <li>
-          <a routerLinkActive="active" routerLink="/books/books-list" [queryParams]="{ sort:'most-rated' }"
-            queryParamsHandling="merge">Most read books</a>
+          <a
+            routerLinkActive="active"
+            routerLink="/books/books-list"
+            [queryParams]="{ sort: 'most-rated' }"
+            queryParamsHandling="merge"
+            >Most read books</a
+          >
         </li>
 
         <li>
-          <a routerLinkActive="active" routerLink="/books/books-list" [queryParams]="{ sort:'highest-rated' }"
-            queryParamsHandling="merge">Highest rated books</a>
+          <a
+            routerLinkActive="active"
+            routerLink="/books/books-list"
+            [queryParams]="{ sort: 'highest-rated' }"
+            queryParamsHandling="merge"
+            >Highest rated books</a
+          >
         </li>
       </ul>
     </div>
   </div>
-
-
 </div>
-
-
-<!-- <div class="sort">
-      <h1>Rating</h1>
-      <ul>
-        <li>
-          <Link
-            to="?sort=sortCount"
-            class={isActive1 ? activeClassName : ""}
-          >
-            Most read books
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            to="?sort=sortAv"
-            class={isActive2 ? activeClassName : ""}
-          >
-            Highest rated books
-          </Link>
-        </li>
-      </ul>
-    </div> -->

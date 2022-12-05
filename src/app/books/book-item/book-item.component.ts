@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { IBook } from 'src/app/shared/interfaces';
 import { AuthService } from 'src/app/user/auth.service';
-import { UserService } from 'src/app/user/user.service';
 import { BooksService } from '../books.service';
 
 @Component({
@@ -28,7 +26,6 @@ export class BookItemComponent implements OnInit {
   @Input() disabled!: boolean;
   
   ngOnInit(): void {
-    // console.log(this.authService.getAuth().data);
     this.user = this.authService.getAuth()?.data.user;
   this.bookService.getOneVote(this.user?.id,
    this.book.id)

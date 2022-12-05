@@ -4,6 +4,7 @@ import { IBook } from 'src/app/shared/interfaces';
 import { IVote } from 'src/app/shared/interfaces/vote';
 import { AuthService } from 'src/app/user/auth.service';
 import { BooksService } from '../books.service';
+
 @Component({
   selector: 'app-book-info',
   templateUrl: './book-info.component.html',

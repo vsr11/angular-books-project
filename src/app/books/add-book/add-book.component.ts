@@ -17,13 +17,6 @@ export class AddBookComponent implements OnInit {
     this.onebook = undefined;
   }
   
-  ngOnInit(): void {
-    for(let x of this.categories){
-      let y = new FormControl();
-      this.cats.addControl(x, y);
-    }
-  }
-    
   categories = catArr;
   onebook: IBook | undefined;
   findbook: IBook | undefined;
@@ -33,7 +26,14 @@ export class AddBookComponent implements OnInit {
 
   externalSearch = new FormGroup({
     isbn: new FormControl('')
-  }); 
+  });
+
+  ngOnInit(): void {
+    for(let x of this.categories){
+      let y = new FormControl();
+      this.cats.addControl(x, y);
+    }
+  } 
 
   FindBookHandle () {
     this.booksService.getByIsbn(this.externalSearch.get('isbn')?.value)
@@ -41,7 +41,6 @@ export class AddBookComponent implements OnInit {
         let isbn = this.externalSearch.get('isbn')?.value;
         this.onebook = Fun.extactBookData(data, { isbn });
       });
-    // setISBN(e.currentTarget.parentNode.parentNode.isbn.value);
   };
 
 FindBookDB (){
@@ -61,21 +60,8 @@ FindBookDB (){
         this.selectedCats.push(c[0]);
       }
     }
-
     
-    // e.preventDefault();
-    // let categories = [];
-    // for (let x of e.currentTarget.parentNode) {
-      // if (x.type === "checkbox" && x.checked) {
-        // categories.push(x.value);
-      // }
       this.onebook!.categories = this.selectedCats;
       this.booksService.addBook(this.onebook);
     }
-    // internal.addBook(onebook);
-
-    // setISBN("");
-    // setOne({});
-    // document.forms[0].reset();
-  // }
 }

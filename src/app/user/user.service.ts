@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IUser } from '../shared/interfaces';
 
 @Injectable()
 export class UserService {
@@ -19,12 +18,6 @@ export class UserService {
     return this.http.get('http://localhost:5000/users/' + id)
   }
   
-//   getUserData(): any {
-//     let x = undefined;
-//     this.http.get('http://localhost:5000/users/' + this.getUser().id).subscribe(d=>x=d);
-//     return x;
-// }
-
   getUser(){
     let user:any = localStorage.getItem('userData');
     user = JSON.parse(user!);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Fun } from 'src/app/shared/fun';
-import {IBook} from '../../shared/interfaces'
+import { IBook } from '../../shared/interfaces'
 import { BooksService } from '../books.service';
 
 

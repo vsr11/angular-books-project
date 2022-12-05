@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/user/auth.service';
 import { BooksService } from '../books.service';
 import { ActivatedRoute, Router } from '@angular/router';

@@ -2,35 +2,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { isAdminGuard } from '../shared/guards/is-admin.guard';
 import { isLoggedInGuard } from '../shared/guards/is-logged-in.guard';
-import { AddBookComponent } from "./add-book/add-book.component";
 import { AddComponent } from './add/add.component';
-import { BookInfoComponent } from "./book-info/book-info.component";
+import { BookInfoComponent } from './book-info/book-info.component';
 import { BookItemComponent } from './book-item/book-item.component';
-import { BooksListComponent } from "./books-list/books-list.component";
+import { BooksListComponent } from './books-list/books-list.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { MyBooksComponent } from './my-books/my-books.component';
-import {MyVotesComponent} from './my-votes/my-votes.component'
+import { MyVotesComponent } from './my-votes/my-votes.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'books-list'
+    redirectTo: 'books-list',
   },
   {
     path: 'books-list',
-    component: BooksListComponent
+    component: BooksListComponent,
   },
-
-  // {
-  //   path: 'add',
-  //   component: AddBookComponent
-  // },
   {
     path: 'add',
-    component: AddComponent
+    component: AddComponent,
   },
-  
+
   {
     path: 'book-item',
     component: BookItemComponent,
@@ -40,23 +34,22 @@ const routes: Routes = [
     component: BookInfoComponent,
   },
   {
-    path:'edit/:id',
-    canActivate: [isLoggedInGuard,isAdminGuard],
-    component:EditBookComponent,
+    path: 'edit/:id',
+    canActivate: [isLoggedInGuard, isAdminGuard],
+    component: EditBookComponent,
   },
   {
-   path:'my-books',
-    component:MyBooksComponent
-},
-{
-  path: 'my-vote/:voteId',
-  component: MyVotesComponent
-}
-
+    path: 'my-books',
+    component: MyBooksComponent,
+  },
+  {
+    path: 'my-vote/:voteId',
+    component: MyVotesComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class BooksRoutingModule { }
+export class BooksRoutingModule {}

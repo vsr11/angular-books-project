@@ -68,6 +68,4 @@ export class MyVotesComponent implements OnInit {
   }
     )
 }
-
-  // exit(){ this.router2.navigate([this.redirect])}
 }
