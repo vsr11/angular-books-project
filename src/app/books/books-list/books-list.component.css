@@ -8,9 +8,10 @@
     width: 95%;
     background-color: aliceblue;
     margin: 0 auto;
+    padding: 0 3.5rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: start;
 }
 
 .title {

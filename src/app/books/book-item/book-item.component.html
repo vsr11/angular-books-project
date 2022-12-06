@@ -15,7 +15,7 @@
   </div>
 
   <div *ngIf="isAuth">
-    <span *ngIf="readBook" class="button">Already Read</span>
+    <span *ngIf="readBook" class="button already-read">Already Read</span>
     <button type="button" *ngIf="!readBook" (click)="onReadHendler()">
       Read
     </button>

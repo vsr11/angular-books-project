@@ -59,7 +59,8 @@ select {
 }
 
 button,
-input {
+input,
+.already-read {
     display: inline-block;
     outline: none;
     cursor: pointer;
