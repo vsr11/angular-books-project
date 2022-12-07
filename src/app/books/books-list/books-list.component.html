@@ -1,20 +1,30 @@
 <div class="main">
-    <div>
-        <app-aside></app-aside>
-    </div>
+  <div>
+    <app-aside></app-aside>
+  </div>
 
-    <div class="books-list">
-        <div class="title">{{cat}}</div>
-        <ng-container *ngIf="allBooks">
-            <ng-container
-                *ngFor="let onebook of allBooks | paginate: { id: 'allBooks', itemsPerPage: 10, currentPage: page }">
-                <app-book-item [book]="onebook"></app-book-item>
-            </ng-container>
-        </ng-container>
-        <pagination-controls id="allBooks" (pageChange)="pageChanged($event)"
-            (pageBoundsCorrection)="pageChanged($event)" previousLabel="Previous" nextLabel="Next"
-            screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
-            screenReaderCurrentLabel="You're on page"></pagination-controls>
-        <ng-container *ngIf="!allBooks">Loading...</ng-container>
-    </div>
+  <div class="books-list">
+    <div class="title">{{ sort }} {{ cat }}</div>
+    <ng-container *ngIf="allBooks">
+      <ng-container
+        *ngFor="
+          let onebook of allBooks
+            | paginate : { id: 'allBooks', itemsPerPage: 10, currentPage: page }
+        "
+      >
+        <app-book-item [book]="onebook"></app-book-item>
+      </ng-container>
+    </ng-container>
+    <pagination-controls
+      id="allBooks"
+      (pageChange)="pageChanged($event)"
+      (pageBoundsCorrection)="pageChanged($event)"
+      previousLabel="Previous"
+      nextLabel="Next"
+      screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="page"
+      screenReaderCurrentLabel="You're on page"
+    ></pagination-controls>
+    <ng-container *ngIf="!allBooks">Loading...</ng-container>
+  </div>
 </div>

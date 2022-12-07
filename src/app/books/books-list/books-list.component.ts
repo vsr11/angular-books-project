@@ -14,6 +14,7 @@ export class BooksListComponent implements OnInit {
   allBooks: IBook[] | undefined; 
 
   cat: string = "";
+  sort:string="";
   page: number = 1;
 
   constructor(private bookSer: BooksService, private router: ActivatedRoute) { }
@@ -36,6 +37,7 @@ pageBoundsCorrection(page: number){
       }
       )
       this.cat=qp['category'];
+      this.sort=qp['sort']
     });
     }
   }

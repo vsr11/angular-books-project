@@ -14,18 +14,20 @@
 
         <li>
           <a
-            routerLink="/books/books-list"
             routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/books/books-list"
+            [queryParams]="{ view: 1 }"
+            queryParamsHandling="merge"
           >
             <i class="fa-solid fa-grip"></i
           ></a>
         </li>
         <li>
           <a
-            routerLink="/books/books-list"
             routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/books/books-list"
+            [queryParams]="{ view: 2 }"
+            queryParamsHandling="merge"
           >
             <i class="fa-solid fa-grip-vertical"></i
           ></a>
