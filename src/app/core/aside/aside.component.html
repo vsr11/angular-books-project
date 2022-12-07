@@ -1,4 +1,3 @@
-<!-- {{ isActive }} -->
 <div class="aside">
   <div class="categories">
     <h2>CATEGORIES</h2>
@@ -7,10 +6,8 @@
       <ul *ngFor="let cat of allCategoris">
         <li>
           <!-- [routerLinkActiveOptions]="{ exact: true }" -->
-          <!-- [routerLinkActiveOptions]="IsActiveMatchOptions" -->
           <a
-            [routerLinkActive]="['active']"
-            [ngClass]="paramsSet['category'] ? 'active' : ''"
+            routerLinkActive="active"
             routerLink="/books/books-list"
             [queryParams]="{ category: cat }"
             queryParamsHandling="merge"
@@ -25,10 +22,8 @@
       <ul>
         <li>
           <!-- [routerLinkActiveOptions]="{ exact: true }" -->
-          <!-- [routerLinkActiveOptions]="IsActiveMatchOptions" -->
           <a
-            [routerLinkActive]="['active']"
-            [ngClass]="paramsSet['sort'] ? 'active' : ''"
+            routerLinkActive="active"
             routerLink="/books/books-list"
             [queryParams]="{ sort: 'most-rated' }"
             queryParamsHandling="merge"
@@ -38,10 +33,8 @@
 
         <li>
           <!-- [routerLinkActiveOptions]="{ exact: true }" -->
-          <!-- [routerLinkActiveOptions]="IsActiveMatchOptions" -->
           <a
-            [routerLinkActive]="['active']"
-            [ngClass]="paramsSet['sort'] ? 'active' : ''"
+            routerLinkActive="active"
             routerLink="/books/books-list"
             [queryParams]="{ sort: 'highest-rated' }"
             queryParamsHandling="merge"

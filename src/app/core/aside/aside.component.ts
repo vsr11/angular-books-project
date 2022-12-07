@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, IsActiveMatchOptions } from '@angular/router';
 import { catArr } from '../../shared/categories';
 
 @Component({
@@ -8,19 +7,9 @@ import { catArr } from '../../shared/categories';
   styleUrls: ['./aside.component.css'],
 })
 export class AsideComponent implements OnInit {
-  constructor(private router: ActivatedRoute) {}
+  constructor() {}
   allCategoris: string[] = catArr;
-  paramsSet: any;
-  
-  IsActiveMatchOptions: IsActiveMatchOptions = {
-    queryParams: 'subset',
-    matrixParams: 'exact',
-    paths: 'subset',
-    fragment: 'ignored',
-  };
 
   ngOnInit(): void {
-    // console.log(this.paramsSet['category'])
-    this.paramsSet = this.router.snapshot.queryParams;
   }
 }

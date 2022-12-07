@@ -41,3 +41,7 @@ a:focus {
 .categories {
     margin-top: 10rem;
 }
+
+.active {
+    color: #f3712e;
+}
