@@ -59,7 +59,8 @@ select {
 }
 
 button,
-input,
+input[type="submit"],
+input[type="button"],
 .already-read {
     display: inline-block;
     outline: none;
@@ -117,4 +118,18 @@ a:hover {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+input,
+textarea {
+    border-radius: 0.7rem;
+    box-shadow: initial;
+    border: 1px solid black;
+}
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+    border-color: #f3712e;
 }

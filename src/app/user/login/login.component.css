@@ -43,7 +43,7 @@ form label {
     border-radius: 20px;
     height: auto;
     width: 320px;
-    box-shadow: 0 5px 10px black;
+    box-shadow: 0 5px 10px gray;
 }
 
 .err1,

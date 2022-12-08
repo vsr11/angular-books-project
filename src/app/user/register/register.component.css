@@ -28,10 +28,24 @@ form label {
     margin: 1rem 2rem;
 }
 
-.allerr {
-    min-width: 20rem;
+div.input {
+    position: relative;
 }
 
+.err {
+    position: absolute;
+    top: 0px;
+    left: 700px;
+
+    min-width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    height: auto;
+    width: 320px;
+    box-shadow: 0 5px 10px gray;
+}
+
+.err1,
 .err {
     color: red;
 }

@@ -6,6 +6,11 @@
 
 .books-list {
     width: 95%;
+    /* background-image: url(../../shared/book.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
     background-color: aliceblue;
     margin: 0 auto;
     padding: 0 3.5rem;

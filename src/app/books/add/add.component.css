@@ -82,3 +82,28 @@ h1 {
     background: transparent;
     margin: 0;
 }
+
+input {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    border: 0;
+    margin: 0 1rem 1rem 0;
+    padding: 0.5rem 1rem;
+    line-height: 1;
+    /* background: #ece2e2; */
+    font-size: 1.3rem;
+    border-radius: 0.7rem;
+    border: 1px solid black;
+}
+
+input:hover,
+input:focus {
+    border-color: #f3712e;
+}
+
+label {
+    margin-right: 5px;
+}
