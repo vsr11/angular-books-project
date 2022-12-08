@@ -1,4 +1,4 @@
-<div class="book-item">
+<div class="book-item" [ngClass]="view === 'column' ? 'column' : ''">
   <div class="img">
     <a [routerLink]="['/books/book-info', book.id]"
       ><img src="{{ book.img }}" alt=""

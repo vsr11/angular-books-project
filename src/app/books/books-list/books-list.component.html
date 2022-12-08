@@ -6,14 +6,16 @@
   <div class="books-list">
     <div class="title">{{ sort }} {{ cat }} BOOKS</div>
     <ng-container *ngIf="allBooks">
-      <ng-container
+      <div
+        class="book-item"
+        [ngClass]="view === 'column' ? 'column' : ''"
         *ngFor="
           let onebook of allBooks
             | paginate : { id: 'allBooks', itemsPerPage: 10, currentPage: page }
         "
       >
-        <app-book-item [book]="onebook"></app-book-item>
-      </ng-container>
+        <app-book-item [book]="onebook" [view]="view"></app-book-item>
+      </div>
     </ng-container>
     <pagination-controls
       id="allBooks"

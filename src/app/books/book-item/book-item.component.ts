@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IBook } from 'src/app/shared/interfaces';
 import { AuthService } from 'src/app/user/auth.service';
 import { BooksService } from '../books.service';
@@ -15,7 +16,7 @@ export class BookItemComponent implements OnInit {
       {}
 
   @Input() book!: IBook;
-  
+  @Input() view: any;
   get isAuth(){
     return this.authService.isAuth;
   }
@@ -24,15 +25,15 @@ export class BookItemComponent implements OnInit {
   readList: string[] = []
   user: any;
   @Input() disabled!: boolean;
-  
+
   ngOnInit(): void {
     this.user = this.authService.getAuth()?.data.user;
   this.bookService.getOneVote(this.user?.id,
    this.book.id)
   .subscribe((d: any) => {
     this.readBook = d.length > 0;
-    
   });
+  
 };
 
 onReadHendler(){

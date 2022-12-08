@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../user/auth.service';
 
 @Component({
@@ -8,12 +8,11 @@ import { AuthService } from '../../user/auth.service';
   styleUrls: ['./heder.component.css']
 })
 export class HederComponent {
-  constructor(private authService: AuthService,private router:Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
   
- auth = this.authService;
-  get isAuth():boolean {return this.authService.isAuth}
+  auth = this.authService;
+  get isAuth(): boolean {return this.authService.isAuth}
   
-
   logout(){
     localStorage.removeItem('userData');
     this.router.navigate(['/']);

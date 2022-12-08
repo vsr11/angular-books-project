@@ -1,5 +1,6 @@
 .book-item {
     width: 280px;
+
     background-color: rgb(253, 247, 247);
     margin: 1rem 2rem;
     padding: 0.5rem;
@@ -60,4 +61,23 @@ img:hover {
     background: transparent;
     cursor: default;
 
+}
+
+.book-item.column {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 0;
+}
+
+.book-item.column>.img {
+    width: 80px;
+    height: 100px;
+    margin: 1rem;
+}
+
+.book-item.column>.title {
+    font-size: 2rem;
 }

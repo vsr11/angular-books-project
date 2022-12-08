@@ -2,7 +2,7 @@ import { IBook } from "./interfaces";
 
 export const Fun = {
   sortBy(data: IBook[], sort: string): IBook[]{
-    if (sort === "most-rated") {
+    if (sort === "most-read") {
       data.sort((item1, item2) => item2.count-item1.count);
     }
       if (sort === "highest-rated") {

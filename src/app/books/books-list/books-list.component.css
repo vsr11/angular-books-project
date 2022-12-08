@@ -14,6 +14,8 @@
     justify-content: start;
 }
 
+
+
 .title {
     width: 100%;
     text-align: center;
@@ -28,4 +30,8 @@
 
 #allBooks ::ng-deep .ngx-pagination .current {
     background: #f3712e;
+}
+
+.column {
+    width: 100%;
 }
