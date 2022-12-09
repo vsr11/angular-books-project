@@ -1,0 +1,9 @@
+div {
+    width: 80vw;
+    margin: auto;
+    height: 80vh;
+    background-image: url('../../shared/404.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

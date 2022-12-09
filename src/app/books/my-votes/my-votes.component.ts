@@ -51,21 +51,30 @@ export class MyVotesComponent implements OnInit {
         review: this.model.review
       })
         .subscribe(()=>{
+                  
           this.router2.navigate(['/books/my-books'])
           this.voted = true;
         });
 
-    this.bookService.getOneBook(this.vote.book_id)
-    ?.subscribe(d => {
-      this.count1 = d.count;
-      this.avg1 = d.avg; 
-      this.data2 = {      
-        avg: (this.avg1 * this.count1 + this.newRating!)/(this.count1+1),
-        count: this.count1 + 1
-      };
+        this.bookService.getAllVotesByBook(this.vote.book_id)
+        .subscribe(d=>{
+        this.count1=d.length;
+         for (let x of d) {
+          this.avg1=this.avg1+x.rating;
+          
+         }
+         if(this.count1>0){
+          this.avg1 = this.avg1 / this.count1;
+        }
+                            
+          this.data2 = {      
+            avg: this.avg1,
+            count: this.count1
+          };
+        })
+
       this.bookService.updateBook(this.vote.book_id, this.data2)
-      .subscribe(()=>{this.router2.navigate(['/books/my-books'])});
+      .subscribe(()=>{
+        this.router2.navigate(['/books/my-books'])});
   }
-    )
-}
 }
