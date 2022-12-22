@@ -7,7 +7,7 @@
     <div class="book-info">
       <div class="book-info-title">{{ book?.title }}</div>
       <div class="book-info-author">
-        {{ book?.authors }}
+        {{ book?.authors?.join(", ") }}
       </div>
       <input
         *ngIf="isAdmin"
