@@ -22,6 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'add',
+    canActivate: [isLoggedInGuard],
     component: AddComponent,
   },
 
@@ -40,10 +41,12 @@ const routes: Routes = [
   },
   {
     path: 'my-books',
+    canActivate: [isLoggedInGuard],
     component: MyBooksComponent,
   },
   {
     path: 'my-vote/:voteId',
+    canActivate: [isLoggedInGuard],
     component: MyVotesComponent,
   },
 ];
