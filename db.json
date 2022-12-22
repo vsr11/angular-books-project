@@ -1,0 +1,302 @@
+{
+  "books": [
+    {
+      "id": "6qGOEAAAQBAJ",
+      "title": "The Grapes of Wrath",
+      "authors": [
+        "John Steinbeck"
+      ],
+      "publisher": "National Geographic Books",
+      "publishedDate": "2014-04-10",
+      "pageCount": 0,
+      "img": "http://books.google.com/books/content?id=6qGOEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "April 2014 marks the 75th anniversary of the first Viking hardcover publication of Steinbeck’s crowning literary achievement First published in 1939, Steinbeck’s Pulitzer Prize–winning epic of the Great Depression chronicles the Dust Bowl migration of the 1930s and tells the story of one Oklahoma farm family, the Joads, driven from their homestead and forced to travel west to the promised land of California. Out of their trials and their repeated collisions against the hard realities of an America divided into haves and have-nots evolves a drama that is intensely human yet majestic in its scale and moral vision, elemental yet plainspoken, tragic but ultimately stirring in its human dignity. A portrait of the conflict between the powerful and the powerless, of one man’s fierce reaction to injustice, and of one woman’s stoical strength, the novel captures the horrors of the Great Depression and probes the very nature of equality and justice in America. As Don DeLillo has claimed, Steinbeck “shaped a geography of conscience” with this novel where “there is something at stake in every sentence.” Beyond that—for emotional urgency, evocative power, sustained impact, prophetic reach, and continued controversy—The Grapes of Wrath is perhaps the most American of American classics. To commemorate the book's 75th anniversary, this volume is modeled on the first edition, featuring the original cover illustration by Elmer Hader and specially designed endpapers by Michael Schwab.",
+      "language": "en",
+      "categories": [
+        "history",
+        "romance"
+      ],
+      "avg": 2.5,
+      "count": 2,
+      "isbn": "067001690X"
+    },
+    {
+      "id": "9QFiPwAACAAJ",
+      "title": "The Little Prince",
+      "authors": [
+        "Antoine de Saint-Exupéry"
+      ],
+      "publisher": "Egmont Books Limited",
+      "publishedDate": "2005",
+      "pageCount": 83,
+      "img": "http://books.google.com/books/content?id=9QFiPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "An aviator whose plane is forced down in the Sahara Desert encounters a little prince from a small planet who relates his adventures in seeking the secret of what is important in life.",
+      "language": "en",
+      "categories": [
+        "fantasy",
+        "young adult"
+      ],
+      "avg": 4.666666666666667,
+      "count": 3,
+      "isbn": "1405216344"
+    },
+    {
+      "id": "zVAfkgAACAAJ",
+      "title": "The Shining",
+      "authors": [
+        "Stephen King"
+      ],
+      "publisher": "Hodder & Stoughton",
+      "publishedDate": "2011",
+      "pageCount": 497,
+      "img": "http://books.google.com/books/content?id=zVAfkgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "Danny is only five years old, but in the words of old Mr Hallorann he is a 'shiner', aglow with psychic voltage. When his father becomes caretaker of the Overlook Hotel, Danny's visions grow out of control. As winter closes in and blizzards cut them off, the hotel seems to develop a life of its own. It is meant to be empty. So who is the lady in Room 217 and who are the masked guests going up and down in the elevator? And why do the hedges shaped like animals seem so alive? Somewhere, somehow, there is an evil force in the hotel - and that, too, is beginning to shine . . .",
+      "language": "en",
+      "categories": [
+        "horror",
+        "fantasy"
+      ],
+      "avg": 4,
+      "count": 3,
+      "isbn": "1444720724"
+    },
+    {
+      "id": "Yz8Fnw0PlEQC",
+      "title": "The Hunger Games (Hunger Games, Book One)",
+      "authors": [
+        "Suzanne Collins"
+      ],
+      "publisher": "Scholastic Inc.",
+      "publishedDate": "2009-09-01",
+      "pageCount": 387,
+      "img": "http://books.google.com/books/content?id=Yz8Fnw0PlEQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "This Special Edition of The Hunger Games includes the most extensive interview Suzanne Collins has given since the publication of The Hunger Games; an absorbing behind-the-scenes look at the creation of the series; and an engaging archival conversation between Suzanne Collins and YA legend Walter Dean Myers on writing about war. The Special Edition answers many questions fans have had over the years, and gives great insight into the creation of this era-defining work. In the ruins of a place once known as North America lies the nation of Panem, a shining Capitol surrounded by twelve outlying districts. The Capitol keeps the districts in line by forcing them all to send one boy and one girl between the ages of twelve and eighteen to participate in the annual Hunger Games, a fight to the death on live TV.Sixteen-year-old Katniss Everdeen regards it as a death sentence when she steps forward to take her sister's place in the Games. But Katniss has been close to death before-and survival, for her, is second nature. Still, if she is to win, she will have to start making choices that weigh survival against humanity and life against love.",
+      "language": "en",
+      "categories": [
+        "fantasy",
+        "young adult"
+      ],
+      "avg": 0,
+      "count": 0,
+      "isbn": "0545229936"
+    },
+    {
+      "id": "7AiTEAAAQBAJ",
+      "title": "The Girl with the Dragon Tattoo",
+      "authors": [
+        "Stieg Larsson"
+      ],
+      "publisher": "Penguin",
+      "publishedDate": "2015-09-24",
+      "pageCount": 0,
+      "img": "http://books.google.com/books/content?id=7AiTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "A spellbinding amalgam of murder mystery, family saga, love story, and financial intrigue. It’s about the disappearance forty years ago of Harriet Vanger, a young scion of one of the wealthiest families in Sweden . . . and about her octogenarian uncle, determined to know the truth about what he believes was her murder. It’s about Mikael Blomkvist, a crusading journalist recently at the wrong end of a libel case, hired to get to the bottom of Harriet’s disappearance . . . and about Lisbeth Salander, a twenty-four-year-old pierced and tattooed genius hacker possessed of the hard-earned wisdom of someone twice her age—and a terrifying capacity for ruthlessness to go with it—who assists Blomkvist with the investigation. This unlikely team discovers a vein of nearly unfathomable iniquity running through the Vanger family, astonishing corruption in the highest echelons of Swedish industrialism—and an unexpected connection between themselves. It’s a contagiously exciting, stunningly intelligent novel about society at its most hidden, and about the intimate lives of a brilliantly realized cast of characters, all of them forced to face the darker aspects of their world and of their own lives.",
+      "language": "en",
+      "categories": [
+        "thriller",
+        "crime"
+      ],
+      "avg": 3.5,
+      "count": 2,
+      "isbn": "014319836X"
+    },
+    {
+      "id": "PGR2AwAAQBAJ",
+      "title": "To Kill a Mockingbird",
+      "authors": [
+        "Harper Lee"
+      ],
+      "publisher": "Harper Collins",
+      "publishedDate": "2014-07-08",
+      "pageCount": 336,
+      "img": "http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "Voted America's Best-Loved Novel in PBS's The Great American Read Harper Lee's Pulitzer Prize-winning masterwork of honor and injustice in the deep South—and the heroism of one man in the face of blind and violent hatred One of the most cherished stories of all time, To Kill a Mockingbird has been translated into more than forty languages, sold more than forty million copies worldwide, served as the basis for an enormously popular motion picture, and was voted one of the best novels of the twentieth century by librarians across the country. A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice, it views a world of great beauty and savage inequities through the eyes of a young girl, as her father—a crusading local lawyer—risks everything to defend a black man unjustly accused of a terrible crime.",
+      "language": "en",
+      "categories": [
+        "history",
+        "young adult"
+      ],
+      "avg": 0,
+      "count": 0,
+      "isbn": "0062368680"
+    },
+    {
+      "id": "TKUVDAAAQBAJ",
+      "title": "The Picture of Dorian Gray",
+      "authors": [
+        "Oscar Wilde"
+      ],
+      "publisher": "Oxford University Press",
+      "publishedDate": "2008-04-17",
+      "pageCount": 272,
+      "img": "http://books.google.com/books/content?id=TKUVDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "description": "Gray's outward innocence conceals corruption deep enough to charm those about him into a life of wanton sexuality.",
+      "language": "en",
+      "categories": [
+        "romance",
+        "fantasy",
+        "young adult"
+      ],
+      "avg": 4,
+      "count": 3,
+      "isbn": "0199535981"
+    },
+    {
+      "id": "wRFCngEACAAJ",
+      "title": "The King's Speech",
+      "authors": [
+        "Mark Logue",
+        "Peter Conradi"
+      ],
+      "publisher": "Sterling Publishing Company Incorporated",
+      "publishedDate": "2010",
+      "pageCount": 242,
+      "img": "http://books.google.com/books/content?id=wRFCngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "description": "Presents the life of the Australian speech therapist who helped the English king, George VI, overcome a lifelong speech disorder and become an eloquent leader of his people during the difficult days of World War II.",
+      "language": "en",
+      "categories": [
+        "history"
+      ],
+      "avg": 0,
+      "count": 0,
+      "isbn": "140278676X"
+    }
+  ],
+  "users": [
+    {
+      "email": "aaa@aaa",
+      "password": "$2a$10$/2QMXpULDPjOBsa1iyE3n.5nLQNuvlJ92i9j7J.zras96wWwZSC3K",
+      "name": "aaa",
+      "role": "admin",
+      "id": 11
+    },
+    {
+      "email": "ccc@ccc",
+      "password": "$2a$10$tuG62shVfeoBLeksCH1gguWLERb3nRXghs8Z7PJZMqoZK28W9W.oq",
+      "name": "ccc",
+      "role": "",
+      "id": 12
+    },
+    {
+      "email": "bbb@bbb",
+      "password": "$2a$10$GmyQi0lelyCU9mSNTHpuweZLvug6yKJRGOsdYlOitt9kurOWByHJu",
+      "name": "bbb",
+      "role": "",
+      "id": 13
+    },
+    {
+      "email": "ddd@ddd",
+      "password": "$2a$10$N9koZSjb5tYNHslaoU1WeuP5iu4GulpVyYqMkIxFJFOBNa82vfBN2",
+      "name": "ddd",
+      "role": "user",
+      "id": 14
+    }
+  ],
+  "votes": [
+    {
+      "user_id": 11,
+      "book_id": "9QFiPwAACAAJ",
+      "rating": 5,
+      "review": "The story is philosophical and includes social criticism of the adult world. It was written during a period when Saint-Expiry fled to North America subsequent to the Fall of France during the Second World War, witnessed first hand by the author and captured in his memoir Flight to Arras. ",
+      "id": 2
+    },
+    {
+      "user_id": 11,
+      "book_id": "6qGOEAAAQBAJ",
+      "rating": 3,
+      "review": "If you are an American you need to read The Grapes of Wrath. It scares the poop out of me because, my fellow Americans, we are repeating history. If live anywhere else read it as well as a guide for what not to do.",
+      "id": 3
+    },
+    {
+      "user_id": 13,
+      "book_id": "9QFiPwAACAAJ",
+      "rating": 4,
+      "review": "The Little Prince, first published in 1943, is a novella, the most famous work of French aristocrat, writer, poet, and pioneering aviator Antoine de Saint-Exupéry. ",
+      "id": 4
+    },
+    {
+      "user_id": 13,
+      "book_id": "7AiTEAAAQBAJ",
+      "rating": 4,
+      "review": "",
+      "id": 5
+    },
+    {
+      "user_id": 13,
+      "book_id": "zVAfkgAACAAJ",
+      "rating": 2,
+      "review": "",
+      "id": 6
+    },
+    {
+      "user_id": 13,
+      "book_id": "6qGOEAAAQBAJ",
+      "rating": 2,
+      "review": "",
+      "id": 7
+    },
+    {
+      "user_id": 11,
+      "book_id": "7AiTEAAAQBAJ",
+      "rating": 3,
+      "review": "",
+      "id": 8
+    },
+    {
+      "user_id": 12,
+      "book_id": "zVAfkgAACAAJ",
+      "rating": 5,
+      "review": "It's as though he built a haunted house and then filled every nook and cranny with detail. King is also at his best in regard to characterization, all well rounded and complete, we know family relationships, group dynamics, all the old hidden buried fears. ",
+      "id": 9
+    },
+    {
+      "user_id": 12,
+      "book_id": "9QFiPwAACAAJ",
+      "rating": 5,
+      "review": "",
+      "id": 10
+    },
+    {
+      "user_id": 11,
+      "book_id": "Yz8Fnw0PlEQC",
+      "rating": 0,
+      "review": "",
+      "id": 11
+    },
+    {
+      "user_id": 11,
+      "book_id": "TKUVDAAAQBAJ",
+      "rating": 4,
+      "review": "",
+      "id": 12
+    },
+    {
+      "user_id": 13,
+      "book_id": "TKUVDAAAQBAJ",
+      "rating": 3,
+      "review": "ццхцхх",
+      "id": 13
+    },
+    {
+      "user_id": 14,
+      "book_id": "TKUVDAAAQBAJ",
+      "rating": 5,
+      "review": "",
+      "id": 14
+    },
+    {
+      "user_id": 11,
+      "book_id": "zVAfkgAACAAJ",
+      "rating": 5,
+      "review": "qqqq",
+      "id": 15
+    },
+    {
+      "user_id": 11,
+      "book_id": "wRFCngEACAAJ",
+      "rating": 0,
+      "review": "",
+      "id": 16
+    }
+  ]
+}
