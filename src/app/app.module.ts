@@ -10,13 +10,11 @@ import { UserModule } from './user/user.module';
 import { NgRatingBarModule } from '@zulkarnainshah/ng-rating-bar';
 import { AppComponent } from './app.component';
 import { AuthService } from './user/auth.service';
-import { AddBookComponent } from './books/add-book/add-book.component';
 import { UserService } from './user/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddBookComponent,
    ],
   imports: [
     BrowserModule,
