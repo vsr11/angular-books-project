@@ -6,7 +6,7 @@
     <ng-rating-bar [rating]="r2" [disabled]="true" size="22px"></ng-rating-bar>
   </div>
   <div class="user-rating-right">
-    <ng-container *ngFor="let x of arr">
+    <ng-container *ngFor="let x of [5, 4, 3, 2, 1]">
       <div class="right-row">
         <div>{{ x }} <i class="fa-solid fa-star"></i></div>
         <div class="bar-container">
@@ -23,8 +23,8 @@
 </div>
 <h1>User Reviews</h1>
 <div class="rev" *ngFor="let rev of arr2">
-  <div>{{ rev.user }}</div>
-  <div class="user">
+  <div *ngIf="rev.r2">{{ rev.user }}</div>
+  <div *ngIf="rev.r2" class="user">
     <ng-rating-bar
       [rating]="rev.r2"
       [disabled]="true"

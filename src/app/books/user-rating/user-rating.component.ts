@@ -10,7 +10,7 @@ import { BooksService } from '../books.service';
   styleUrls: ['./user-rating.component.css'],
 })
 export class UserRatingComponent implements OnInit {
-  arr: any = [5, 4, 3, 2, 1];
+  // arr: any = [5, 4, 3, 2, 1];
   arr1: any = [0, 0, 0, 0, 0];
   arr2: any = [];
 
@@ -24,8 +24,6 @@ export class UserRatingComponent implements OnInit {
   r2 = 0;
 
   ngOnInit(): void {
-    console.log(this.book1);
-    
     this.bookService.getAllVotesByBook(this.book1.id).subscribe((d) => {
       this.rating1 = d;
       for (let i = 0; i < d.length; i++) {
@@ -40,8 +38,7 @@ export class UserRatingComponent implements OnInit {
       }
       this.r1 = this.book1.count;
       this.r2 = this.book1.avg;
-      console.log(this.r1,this.r2);
-      
+          
     });
   }
 }

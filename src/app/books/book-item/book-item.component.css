@@ -17,9 +17,9 @@ a {
     text-decoration: none;
 }
 
-div>span {
+/* div>span {
     margin: 0.5rem auto;
-}
+} */
 
 .title {
     font-size: 1.5rem;
@@ -35,10 +35,10 @@ div>span {
     color: #f3712e;
 }
 
-.author {
+/* .author {
     font-style: italic;
     font-size: 1.5rem;
-}
+} */
 
 .img {
     width: 160px;
@@ -64,12 +64,18 @@ img:hover {
 }
 
 .book-item.column {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 1rem auto;
     padding: 0;
+}
+
+.book-item.column>div {
+    text-align: left;
+    width: 15rem;
+    margin: 1rem;
 }
 
 .book-item.column>.img {
@@ -80,4 +86,5 @@ img:hover {
 
 .book-item.column>.title {
     font-size: 2rem;
+    width: 45rem;
 }

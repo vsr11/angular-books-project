@@ -38,4 +38,8 @@ clicked(voteId: number){
   this.router.navigate(['/books/my-vote/', voteId],
   {queryParams: {redirect: redirect}});
 };
+
+exitBtn(){
+  this.router.navigate(['/']);
+}
 }

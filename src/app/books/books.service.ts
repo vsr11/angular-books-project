@@ -27,8 +27,9 @@ addBook(book: IBook|undefined){
   return this.http.post<IBook>('http://localhost:5000/books/', book)
  }
 
-updateBook(bookId: string, data: IBook){
-  return this.http.patch<IBook>('http://localhost:5000/books/' + bookId, data);
+updateBook(bookId: string, data: any){
+  console.log(data);
+  return this.http.patch('http://localhost:5000/books/' + bookId, data);
  }
 
  delBook(bookId: string){

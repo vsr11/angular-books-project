@@ -1,7 +1,9 @@
 <h1 *ngIf="list?.length > 0">My votes</h1>
 <div class="mybooks" *ngFor="let vote of list">
   <div class="img">
-    <img src="{{ vote?.img }}" alt="" />
+    <a [routerLink]="['/books/book-info', vote.book_id]">
+      <img src="{{ vote?.img }}" alt="" />
+    </a>
   </div>
 
   <div class="title">
@@ -13,4 +15,7 @@
   <div>
     <app-my-votes [vote]="vote"></app-my-votes>
   </div>
+</div>
+<div class="input">
+  <input type="button" (click)="exitBtn()" value="Exit" />
 </div>

@@ -38,7 +38,7 @@
         <a routerLink="/books/my-books" routerLinkActive="active">MY BOOKS</a>
       </li>
 
-      <li>
+      <li *ngIf="isAuth">
         <a routerLink="/books/add" routerLinkActive="active">ADD BOOK</a>
       </li>
       <ul *ngIf="!isAuth">
